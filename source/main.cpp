@@ -14,7 +14,7 @@ int main ()
     {
         hidScanInput();
         u32 hDown = hidKeysDown();
-        u23 hHeld = hidKeysHeld();
+        u32 hHeld = hidKeysHeld();
 
         if (hDown & KEY_START)
         {
