@@ -5,7 +5,7 @@
 
 int main ()
 {
-    Gui::Init();
+    Gui::init();
     gfxInitDefault();
     romfsInit();
     cfguInit();
@@ -13,8 +13,8 @@ int main ()
     while (aptMainLoop())
     {
         hidScanInput();
-        u32 hDown hidKeysDown();
-        u23 hHeld hidKeysHeld();
+        u32 hDown = hidKeysDown();
+        u23 hHeld = hidKeysHeld();
 
         if (hDown & KEY_START)
         {
