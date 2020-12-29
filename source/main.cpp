@@ -5,10 +5,12 @@
 
 int main ()
 {
+    //main
     Gui::init();
     gfxInitDefault();
     romfsInit();
     cfguInit();
+    
 
     while (aptMainLoop())
     {
