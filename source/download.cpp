@@ -312,109 +312,110 @@ static Result setupContext(CURL *hnd, const char *url) {
 	const std::string &url: Const Reference to the URL. (https://github.com/Owner/Repo)
 	const std::string &asset: Const Reference to the Asset. (File.filetype)
 	const std::string &path: Const Reference, where to store. (sdmc:/File.filetype)
-	bool includePrereleases: If including Pre-Releases.
-*/
-Result downloadFromRelease(const std::string &url, const std::string &asset, const std::string &path, bool includePrereleases) {
-	Result ret = 0;
-	CURL *hnd;
-
-	void *socubuf = memalign(0x1000, 0x100000);
-	if (!socubuf) {
-		return -1;
-	}
-
-	ret = socInit((u32*)socubuf, 0x100000);
-	if (R_FAILED(ret)) {
-		free(socubuf);
-		return ret;
-	}
-
-	std::regex parseUrl("github\\.com\\/(.+)\\/(.+)");
-	std::smatch result;
-	regex_search(url, result, parseUrl);
-
-	std::string repoOwner = result[1].str(), repoName = result[2].str();
-
-	std::stringstream apiurlStream;
-	apiurlStream << "https://api.github.com/repos/" << repoOwner << "/" << repoName << (includePrereleases ? "/releases" : "/releases/latest");
-	std::string apiurl = apiurlStream.str();
-
-	printf("Downloading latest release from repo:\n%s\nby:\n%s\n", repoName.c_str(), repoOwner.c_str());
-	printf("Crafted API url:\n%s\n", apiurl.c_str());
-
-	hnd = curl_easy_init();
-
-	ret = setupContext(hnd, apiurl.c_str());
-	if (ret != 0) {
-		socExit();
-		free(result_buf);
-		free(socubuf);
-		result_buf = NULL;
-		result_sz = 0;
-		result_written = 0;
-		return ret;
-	}
-
-	CURLcode cres = curl_easy_perform(hnd);
-	curl_easy_cleanup(hnd);
-	char *newbuf = (char *)realloc(result_buf, result_written + 1);
-	result_buf = newbuf;
-	result_buf[result_written] = 0; // nullbyte to end it as a proper C style string.
-
-	if (cres != CURLE_OK) {
-		printf("Error in:\ncurl\n");
-		socExit();
-		free(result_buf);
-		free(socubuf);
-		result_buf = nullptr;
-		result_sz = 0;
-		result_written = 0;
-		return -1;
-	}
-
-	printf("Looking for asset with matching name:\n%s\n", asset.c_str());
-	std::string assetUrl;
-
-	if (nlohmann::json::accept(result_buf)) {
-		nlohmann::json parsedAPI = nlohmann::json::parse(result_buf);
-
-		if (parsedAPI.size() == 0) ret = -2; // All were prereleases and those are being ignored.
-
-		if (ret != -2) {
-			if (includePrereleases) parsedAPI = parsedAPI[0];
-
-			if (parsedAPI["assets"].is_array()) {
-				for (auto jsonAsset : parsedAPI["assets"]) {
-					if (jsonAsset.is_object() && jsonAsset["name"].is_string() && jsonAsset["browser_download_url"].is_string()) {
-						std::string assetName = jsonAsset["name"];
-
-						if (ScriptUtils::matchPattern(asset, assetName)) {
-							assetUrl = jsonAsset["browser_download_url"];
-							break;
-						}
-					}
-				}
-			}
-		}
-
-	} else {
-		ret = -3;
-	}
-
-	socExit();
-	free(result_buf);
-	free(socubuf);
-	result_buf = nullptr;
-	result_sz = 0;
-	result_written = 0;
-
-	if (assetUrl.empty() || ret != 0) {
-		ret = DL_ERROR_GIT;
-
-	} else {
-		ret = downloadToFile(assetUrl, path);
-	}
-
-	return ret;
-}
-
+//	bool includePrereleases: If including Pre-Releases.
+//*/
+//Result downloadFromRelease(const std::string &url, const std::string &asset, const std::string &path, bool includePrereleases) {
+//	Result ret = 0;
+//	CURL *hnd;
+//
+//	void *socubuf = memalign(0x1000, 0x100000);
+//	if (!socubuf) {
+//		return -1;
+//	}
+//
+//	ret = socInit((u32*)socubuf, 0x100000);
+//	if (R_FAILED(ret)) {
+//		free(socubuf);
+//		return ret;
+//	}
+//
+//	std::regex parseUrl("github\\.com\\/(.+)\\/(.+)");
+//	std::smatch result;
+//	regex_search(url, result, parseUrl);
+//
+//	std::string repoOwner = result[1].str(), repoName = result[2].str();
+//
+//	std::stringstream apiurlStream;
+//	apiurlStream << "https://api.github.com/repos/" << repoOwner << "/" << repoName << (includePrereleases ? "/releases" : "/releases/latest");
+//	std::string apiurl = apiurlStream.str();
+//
+//	printf("Downloading latest release from repo:\n%s\nby:\n%s\n", repoName.c_str(), repoOwner.c_str());
+//	printf("Crafted API url:\n%s\n", apiurl.c_str());
+//
+//	hnd = curl_easy_init();
+//
+//	ret = setupContext(hnd, apiurl.c_str());
+//	if (ret != 0) {
+//		socExit();
+//		free(result_buf);
+//		free(socubuf);
+//		result_buf = NULL;
+//		result_sz = 0;
+//		result_written = 0;
+//		return ret;
+//	}
+//
+//	CURLcode cres = curl_easy_perform(hnd);
+//	curl_easy_cleanup(hnd);
+//	char *newbuf = (char *)realloc(result_buf, result_written + 1);
+//	result_buf = newbuf;
+//	result_buf[result_written] = 0; // nullbyte to end it as a proper C style string.
+//
+//	if (cres != CURLE_OK) {
+//		printf("Error in:\ncurl\n");
+//		socExit();
+//		free(result_buf);
+//		free(socubuf);
+//		result_buf = nullptr;
+//		result_sz = 0;
+//		result_written = 0;
+//		return -1;
+//	}
+//
+//	printf("Looking for asset with matching name:\n%s\n", asset.c_str());
+//	std::string assetUrl;
+//
+//	if (nlohmann::json::accept(result_buf)) {
+//		nlohmann::json parsedAPI = nlohmann::json::parse(result_buf);
+//
+//		if (parsedAPI.size() == 0) ret = -2; // All were prereleases and those are being ignored.
+//
+//		if (ret != -2) {
+//			if (includePrereleases) parsedAPI = parsedAPI[0];
+//
+//			if (parsedAPI["assets"].is_array()) {
+//				for (auto jsonAsset : parsedAPI["assets"]) {
+//					if (jsonAsset.is_object() && jsonAsset["name"].is_string() && jsonAsset["browser_download_url"].is_string()) {
+//						std::string assetName = jsonAsset["name"];
+//
+//						if (ScriptUtils::matchPattern(asset, assetName)) {
+//							assetUrl = jsonAsset["browser_download_url"];
+//							break;
+//						}
+//					}
+//				}
+//			}
+//		}
+//
+//	} else {
+//		ret = -3;
+//	}
+//
+//	socExit();
+//	free(result_buf);
+//	free(socubuf);
+//	result_buf = nullptr;
+//	result_sz = 0;
+//	result_written = 0;
+//
+//	if (assetUrl.empty() || ret != 0) {
+//		ret = DL_ERROR_GIT;
+//
+//	} else {
+//		ret = downloadToFile(assetUrl, path);
+//	}
+//
+//	return ret;
+//}
+//
+//

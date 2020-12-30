@@ -29,6 +29,7 @@
 
 #include <iostream>
 #include <string>
+#include <3ds.h>
 
 #define APP_TITLE "Universal-Updater"
 #define VERSION_STRING "3.0.0"
@@ -56,7 +57,7 @@ struct UUUpdate {
 };
 
 Result downloadToFile(const std::string &url, const std::string &path);
-Result downloadFromRelease(const std::string &url, const std::string &asset, const std::string &path, bool includePrereleases);
+//Result downloadFromRelease(const std::string &url, const std::string &asset, const std::string &path, bool includePrereleases);
 
 
 #endif
