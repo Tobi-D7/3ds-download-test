@@ -1,6 +1,6 @@
 #include "gui.hpp"
 
 namespace GFX {
-    void DrawTop();
-    void DrawBottom();
+    void DrawTop(void);
+    void DrawBottom(void);
 }
