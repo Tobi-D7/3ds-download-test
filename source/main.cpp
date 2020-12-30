@@ -22,7 +22,7 @@ int main ()
     ctext("done!");
     consoleInit(GFX_BOTTOM, NULL);
     ctext("D7-download-console:)\n");
-    ctext("Press start to exit") 
+    ctext("Press start to exit");
     while (aptMainLoop())
     {
         gspWaitForVBlank();
