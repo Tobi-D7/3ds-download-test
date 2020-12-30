@@ -27,7 +27,8 @@
 #ifndef _UNIVERSAL_UPDATER_DOWNLOAD_HPP
 #define _UNIVERSAL_UPDATER_DOWNLOAD_HPP
 
-
+#include <iostream>
+#include <string>
 
 #define APP_TITLE "Universal-Updater"
 #define VERSION_STRING "3.0.0"
