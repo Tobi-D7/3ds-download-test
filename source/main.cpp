@@ -11,7 +11,7 @@ int main ()
     gfxInitDefault();
     romfsInit();
     cfguInit();
-    downloadToFile("https://github.com/NPID7/nightlys/raw/master/builds/3ds-download-test/3ds-download-test.3dsx", "sdmc:/NPX/common/3ds-download-test");
+    downloadToFile("https://github.com/NPID7/nightlys/raw/master/builds/3ds-download-test/3ds-download-test.3dsx", "sdmc:/3ds-download-test.3dsx");
     
 
     while (aptMainLoop())
