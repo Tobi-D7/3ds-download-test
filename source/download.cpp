@@ -24,14 +24,12 @@
 *         reasonable ways as different from the original version.
 */
 
-#include "animation.hpp"
+
 #include "download.hpp"
-#include "files.hpp"
-#include "json.hpp"
-#include "lang.hpp"
-#include "screenshot.hpp"
-#include "scriptUtils.hpp"
-#include "stringutils.hpp"
+
+
+
+
 
 #include <3ds.h>
 #include <curl/curl.h>
