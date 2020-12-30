@@ -31,8 +31,8 @@
 #include <string>
 #include <3ds.h>
 
-#define APP_TITLE "Universal-Updater"
-#define VERSION_STRING "3.0.0"
+#define APP_TITLE "3ds-download-test"
+#define VERSION_STRING "1.0.0"
 
 enum DownloadError {
 	DL_ERROR_NONE = 0,
@@ -43,18 +43,6 @@ enum DownloadError {
 	DL_CANCEL, // No clue if that's needed tho.
 };
 
-struct StoreList {
-	std::string Title;
-	std::string Author;
-	std::string URL;
-	std::string Description;
-};
-
-struct UUUpdate {
-	bool Available = false;
-	std::string Notes = "";
-	std::string Version = "";
-};
 
 Result downloadToFile(const std::string &url, const std::string &path);
 //Result downloadFromRelease(const std::string &url, const std::string &asset, const std::string &path, bool includePrereleases);
