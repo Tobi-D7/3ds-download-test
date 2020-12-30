@@ -1,4 +1,5 @@
 #include "gfx.hpp"
+#include "screenCommon.hpp"
 
 void GFX::DrawTop(void)
 {
