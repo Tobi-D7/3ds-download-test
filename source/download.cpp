@@ -196,7 +196,7 @@ Result downloadToFile(const std::string &url, const std::string &path) {
 
 	if (curlResult != CURLE_OK) {
 		retcode = -curlResult;
-		needToDelete = true;
+		
 		goto exit;
 	}
 
@@ -209,7 +209,7 @@ Result downloadToFile(const std::string &url, const std::string &path) {
 
 	if (!filecommit()) {
 		retcode = -3;
-		needToDelete = true;
+		
 		goto exit;
 	}
 
@@ -251,38 +251,5 @@ exit:
 	
 
 	return retcode;
-}
-
-/*
-	following function is from
-	https://github.com/angelsl/libctrfgh/blob/master/curl_test/src/main.c
-*/
-static size_t handle_data(char *ptr, size_t size, size_t nmemb, void *userdata) {
-	(void)userdata;
-	const size_t bsz = size*nmemb;
-
-	if (result_sz == 0 || !result_buf) {
-		result_sz = 0x1000;
-		result_buf = (char *)malloc(result_sz);
-	}
-
-	bool need_realloc = false;
-	while (result_written + bsz > result_sz) {
-		result_sz <<= 1;
-		need_realloc = true;
-	}
-
-	if (need_realloc) {
-		char *new_buf = (char *)realloc(result_buf, result_sz);
-		if (!new_buf) return 0;
-
-		result_buf = new_buf;
-	}
-
-	if (!result_buf) return 0;
-
-	memcpy(result_buf + result_written, ptr, bsz);
-	result_written += bsz;
-	return bsz;
 }
 
