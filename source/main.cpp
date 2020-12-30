@@ -18,8 +18,7 @@ int main ()
     {
         hidScanInput();
         u32 hDown = hidKeysDown();
-        u32 hHeld = hidKeysHeld();
-
+        
         if (hDown & KEY_START)
         {
             break;
