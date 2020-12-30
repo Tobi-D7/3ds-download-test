@@ -42,9 +42,7 @@
 
 #define USER_AGENT APP_TITLE "-" VERSION_STRING
 
-static char *result_buf = nullptr;
-static size_t result_sz = 0;
-static size_t result_written = 0;
+
 
 #define TIME_IN_US 1
 #define TIMETYPE curl_off_t
