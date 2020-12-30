@@ -172,6 +172,7 @@ Result downloadToFile(const std::string &url, const std::string &path) {
 		retcode = -2;
 		goto exit;
 	}
+        printf("done!");
 
 	hnd = curl_easy_init();
 	curl_easy_setopt(hnd, CURLOPT_BUFFERSIZE, FILE_ALLOC_SIZE);
