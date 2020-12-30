@@ -248,9 +248,7 @@ exit:
 	file_toCommit_size = 0;
 	writeError = false;
 
-	if (needToDelete) {
-		if (access(path.c_str(), F_OK) == 0) deleteFile(path.c_str()); // Delete file, cause not fully downloaded.
-	}
+	
 
 	return retcode;
 }
