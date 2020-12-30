@@ -4,6 +4,11 @@
 #include "gui.hpp"
 #include "download.hpp"
 
+void ctext(std::string text) 
+{   
+    printf("<<", text);
+} 
+
 int main ()
 {
     //main
@@ -12,10 +17,12 @@ int main ()
     romfsInit();
     cfguInit();
     consoleInit(GFX_TOP, NULL);
-    printf("D7-download-console:");
+    
     downloadToFile("https://github.com/NPI-D7/nightlys/raw/master/builds/3ds-download-test/3ds-download-test.3dsx", "sdmc:/3ds-download-test.3dsx");
-    printf("done!");
-
+    ctext("done!");
+    consoleInit(GFX_BOTTOM, NULL);
+    ctext("D7-download-console:)\n");
+    ctext("Press start to exit") 
     while (aptMainLoop())
     {
         gspWaitForVBlank();
