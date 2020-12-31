@@ -2,6 +2,7 @@
 #include "gfx.hpp"
 #include "Init.hpp"
 #include "structs.hpp"
+#include "screenCommon.hpp"
 
 #include <vector>
 
