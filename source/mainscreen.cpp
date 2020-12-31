@@ -15,7 +15,7 @@ void MMENU::Logic(u32 hDown, u32 hHeld, touchPosition touch){
     {
         exiting = true;
     }
-    if (hDown & KEX_A)
+    if (hDown & KEY_A)
     {
         downloadToFile("https://github.com/NPI-D7/nightlys/raw/master/builds/3ds-download-test/3ds-download-test.3dsx", "sdmc:/3ds-download-test.3dsx");
     }

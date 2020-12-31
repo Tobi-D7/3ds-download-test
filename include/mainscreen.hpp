@@ -1,6 +1,9 @@
 #include "gui.hpp"
 #include "gfx.hpp"
 #include "Init.hpp"
+#include "structs.hpp"
+
+#include <vector>
 
 class MMMENU : public Screen {
 
@@ -9,5 +12,10 @@ class MMMENU : public Screen {
 	        void Logic(u32 hDown, u32 hHeld, touchPosition touch) override;
 
     private:
+    std::vector<Structs::ButtonPos> mainButtons = {
+		{90, 40, 140, 35}, 
+
+    };    
+
 
 };
