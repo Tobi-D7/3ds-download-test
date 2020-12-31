@@ -1,6 +1,7 @@
 #include "Init.hpp"
 #include "structs.hpp"
 #include "mainscreen.hpp"
+#include "screenCommon.hpp"
 
 
 bool exiting = false;

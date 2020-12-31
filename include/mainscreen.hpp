@@ -10,4 +10,4 @@ class MMMENU : public Screen {
 
     private:
 
-}
+};
