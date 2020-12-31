@@ -1,3 +1,3 @@
 #include "Init.hpp"
 
-int main(){Init::MainLoop}
+int main(){Init::MainLoop;}
