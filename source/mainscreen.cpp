@@ -6,7 +6,7 @@ extern bool exiting;
 void MMENU::Draw(void) const {
 
     GFX::DrawTop();
-    Gui::DrawStringCentered(0, 120, 7, C2D_Color32(0, 0, 0, 255), "Press A to download!", 400);
+    Gui::DrawStringCentered(0, 120, 0.8f, C2D_Color32(0, 0, 0, 255), "Press A to download!", 400);
 
 }
 void MMENU::Logic(u32 hDown, u32 hHeld, touchPosition touch){
