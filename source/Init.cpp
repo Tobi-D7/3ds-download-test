@@ -63,4 +63,5 @@ Result Init::Exit() {
 	cfguExit();
 	romfsExit();
 	return 0;
+	//XD
 }
