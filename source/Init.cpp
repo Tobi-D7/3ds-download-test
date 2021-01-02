@@ -24,7 +24,7 @@ Result Init::Initialize() {
 	cfguInit();
 	osSetSpeedupEnable(true);	
 	
-	Gui::setScreen(std::unique_ptr<MMMENU>(), false, false);
+	Gui::setScreen(std::unique_ptr<MMMENU>(), true, false);
 	return 0;
 }
 

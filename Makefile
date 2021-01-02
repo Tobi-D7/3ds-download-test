@@ -33,7 +33,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	3ds-download-test
 BUILD		:=	build
-UNIVCORE	:=	Universal-Core
+UNIVCORE	:=	Universal-Core d73dsextras
 SOURCES		:=	$(UNIVCORE) source source/gui source/screens
 DATA		:=	data
 INCLUDES	:=	$(UNIVCORE) include include/gui include/screens

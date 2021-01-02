@@ -1,12 +1,16 @@
 #include "mainscreen.hpp"
 #include "download.hpp"
+#include "colors.hpp"
 extern bool touching(touchPosition touch, Structs::ButtonPos button);
 extern bool exiting;
+D7::Color txtcolor;
+
 
 void MMMENU::Draw(void) const {
+    txtcolor.set(255, 255, 255, 255);
 
     GFX::DrawTop();
-    Gui::DrawStringCentered(0, 120, 0.8f, C2D_Color32(0, 0, 0, 255), "Press A to download!", 400);
+    Gui::DrawStringCentered(0, 120, 0.8f, txtcolor, "Press A to download!", 400);
 
 }
 void MMMENU::Logic(u32 hDown, u32 hHeld, touchPosition touch){

@@ -1,3 +1,6 @@
 [submodule "Universal-Core"]
 	path = Universal-Core
 	url = https://github.com/Universal-Team/Universal-Core.git
+[submodule "d73dsextras"]
+	path = d73dsextras
+	url = https://github.com/NPI-D7/d73dsextras.git
