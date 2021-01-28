@@ -3,14 +3,14 @@
 #include "colors.hpp"
 extern bool touching(touchPosition touch, Structs::ButtonPos button);
 extern bool exiting;
-D7::Color txtcolor;
+
 
 
 void MMMENU::Draw(void) const {
-    txtcolor.set(255, 255, 255, 255);
+    
 
     GFX::DrawTop();
-    Gui::DrawStringCentered(0, 120, 0.8f, txtcolor, "Press A to download!", 400);
+    Gui::DrawStringCentered(0, 120, 0.8f, WHITE, "Press A to download!", 400);
 
 }
 void MMMENU::Logic(u32 hDown, u32 hHeld, touchPosition touch){
