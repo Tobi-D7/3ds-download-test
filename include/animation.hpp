@@ -3,5 +3,5 @@
 
 namespace Animation
 {
-    Animation::DrawProgressBar(u64 currentProgress, u64 totalProgress);
+    void Animation::DrawProgressBar(u64 currentProgress, u64 totalProgress);
 }
