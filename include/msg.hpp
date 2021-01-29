@@ -1,4 +1,5 @@
 #include "gfx.hpp"
+#include "screenCommon.hpp"
 
 namespace MSG
 {
