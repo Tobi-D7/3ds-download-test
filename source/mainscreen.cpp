@@ -12,7 +12,7 @@ void MMMENU::Draw(void) const {
 
     GFX::DrawTop();
     Gui::DrawStringCentered(0, 120, 0.8f, WHITE, "Press A to download!", 400);
-    GFX::DrawBotom();
+    GFX::DrawBottom();
 
 }
 void MMMENU::Logic(u32 hDown, u32 hHeld, touchPosition touch){
