@@ -1,5 +1,6 @@
 #include "gfx.hpp"
 #include "screenCommon.hpp"
+#include "colors.hpp"
 
 void GFX::DrawTop(void)
 {
@@ -10,4 +11,5 @@ void GFX::DrawTop(void)
 void GFX::DrawBottom(void)
 {
     Gui::ScreenDraw(Bottom);
+    Gui::Draw_Rect(0, 0, 320, 240, BLUE);
 }
