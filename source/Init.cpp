@@ -2,6 +2,7 @@
 #include "structs.hpp"
 #include "mainscreen.hpp"
 #include "screenCommon.hpp"
+#include "msg.hpp"
 
 
 bool exiting = false;
@@ -17,10 +18,13 @@ bool touching(touchPosition touch, Structs::ButtonPos button) {
 Result Init::Initialize() {
 	fadealpha = 255;
 	fadein = true;
-	
+	Result res;
+	if (!res = Gui::init())
+	{
+		MSG::Msg("Failed Gui");
+	}
 	gfxInitDefault();
 	romfsInit();
-	Gui::init();
 	cfguInit();
 	osSetSpeedupEnable(true);	
 	
