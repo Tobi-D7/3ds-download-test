@@ -17,14 +17,15 @@ bool touching(touchPosition touch, Structs::ButtonPos button) {
 Result Init::Initialize() {
 	fadealpha = 255;
 	fadein = true;
-
+	
 	gfxInitDefault();
 	romfsInit();
 	Gui::init();
 	cfguInit();
 	osSetSpeedupEnable(true);	
 	
-	Gui::setScreen(std::unique_ptr<MMMENU>(), true, false);
+	//Gui::setScreen(std::unique_ptr<MMMENU>(), true, false);
+	Gui::setScreen(std::unique_ptr<MMMENU>(), false, false);
 	return 0;
 }
 
