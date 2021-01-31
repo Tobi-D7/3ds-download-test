@@ -1,0 +1,3 @@
+[submodule "D7-Core-Engine"]
+	path = D7-Core-Engine
+	url = https://github.com/NPI-D7/D7-Core-Engine.git

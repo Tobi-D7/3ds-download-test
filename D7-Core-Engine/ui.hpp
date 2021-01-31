@@ -11,7 +11,7 @@ namespace UI {
         Result unloadSpriteSheet(C2D_SpriteSheet &spritesheet);
         void DrawSprite(C2D_SpriteSheet spritesheet, size_t imgindex, int x = 0, int y = 0, float Xscale = 1, float Yscale = 1);
     }
-    Result loadFont(C2D_Font &bcfnt, cont char *path = "");
+    Result loadFont(C2D_Font &bcfnt, const char *path = "");
     Result unloadFont(C2D_Font &bcfnt);
     void DrawonScreen(C3D_RenderTarget * screen);
 }

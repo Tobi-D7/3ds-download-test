@@ -28,7 +28,7 @@ void UI::fini(void)
     C2D_TextBufDelete(TextBuf);
 	C2D_Fini();
 	C3D_Fini();
-	if (usedScreen) usedScreen = nullptr;
+	if (usedMenu) usedMenu = nullptr;
 }
 Result UI::T3X::loadSpriteSheet(const char * sheetpath, C2D_SpriteSheet &spritesheet)
 {
@@ -52,7 +52,7 @@ void UI::clearTextbuf(void)
 {
 	C2D_TextBufClear(TextBuf);
 }
-Result UI::loadFont(C2D_Font &bcfnt, cont char *path = "")
+Result UI::loadFont(C2D_Font &bcfnt, const char *path = "")
 {
 	if (access(path, F_OK) == 0) bcfnt = C2D_FontLoad(path);
 	return 0;
