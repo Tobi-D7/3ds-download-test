@@ -42,6 +42,7 @@ jobs:
       - name: Build
         id: build
         run: |
+          git submodule update --init --recursive
           make
           mkdir -p ~/artifacts
           cp 3ds-download-test.3dsx ~/artifacts
