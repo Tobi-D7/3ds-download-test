@@ -1,5 +1,6 @@
 #include "Init.hpp"
 #include "ui.hpp"
+#include "mmenu.hpp"
 
 bool exiting = false;
 
@@ -19,6 +20,7 @@ Result Init::Initialize() {
 	romfsInit();
 	cfguInit();
 	osSetSpeedupEnable(true);
+	UI::loadMenu(std::unique_ptr<MMENU>(), false, false);
 	return 0;
 }
 

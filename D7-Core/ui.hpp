@@ -14,4 +14,5 @@ namespace UI {
     Result loadFont(C2D_Font &bcfnt, const char *path = "");
     Result unloadFont(C2D_Font &bcfnt);
     void DrawonScreen(C3D_RenderTarget * screen);
+    void loadMenu(std::unique_ptr<Menu> menu, bool fade = false, bool stack = false);
 }

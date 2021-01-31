@@ -74,3 +74,7 @@ void UI::DrawonScreen(C3D_RenderTarget * screen)
 	C2D_SceneBegin(screen);
 	currentMenu = (screen == Top || screen == TopRight) ? 1 : 0;
 }
+void UI::loadMenu(std::unique_ptr<Menu> menu, bool fade, bool stack)
+{
+	tempMenu = std::move(menu);
+}
