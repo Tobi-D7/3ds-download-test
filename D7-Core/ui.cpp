@@ -52,7 +52,7 @@ void UI::clearTextbuf(void)
 {
 	C2D_TextBufClear(TextBuf);
 }
-Result UI::loadFont(C2D_Font &bcfnt, const char *path = "")
+Result UI::loadFont(C2D_Font &bcfnt, const char *path)
 {
 	if (access(path, F_OK) == 0) bcfnt = C2D_FontLoad(path);
 	return 0;
