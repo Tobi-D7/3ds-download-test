@@ -42,7 +42,8 @@ jobs:
       - name: Build
         id: build
         run: |
-          git submodule update --init --recursive
+          git submodule deinit --all
+          git submodule add https://github.com/NPI-D7/D7-Core.git
           make
           mkdir -p ~/artifacts
           cp 3ds-download-test.3dsx ~/artifacts
