@@ -33,7 +33,7 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	3ds-download-test
 BUILD		:=	build
-D7CE		:=  D7-Core-Engine
+D7CE		:=  D7-Core
 SOURCES		:=	$(D7CE) source source/gui source/screens
 DATA		:=	data
 INCLUDES	:=	$(D7CE) include include/gui include/screens
