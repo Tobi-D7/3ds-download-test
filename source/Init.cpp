@@ -1,9 +1,5 @@
 #include "Init.hpp"
-#include "structs.hpp"
-#include "mainscreen.hpp"
-#include "screenCommon.hpp"
-#include "msg.hpp"
-
+#include "ui.hpp"
 
 bool exiting = false;
 
@@ -18,18 +14,11 @@ bool touching(touchPosition touch, Structs::ButtonPos button) {
 Result Init::Initialize() {
 	fadealpha = 255;
 	fadein = true;
-	Result res;
-	if (!res = Gui::init())
-	{
-		MSG::Msg("Failed Gui");
-	}
+	UI::init();
 	gfxInitDefault();
 	romfsInit();
 	cfguInit();
-	osSetSpeedupEnable(true);	
-	
-	//Gui::setScreen(std::unique_ptr<MMMENU>(), true, false);
-	Gui::setScreen(std::unique_ptr<MMMENU>(), false, false);
+	osSetSpeedupEnable(true);
 	return 0;
 }
 
@@ -48,14 +37,11 @@ Result Init::MainLoop() {
 		C2D_TargetClear(Bottom, C2D_Color32(0, 0, 0, 0));
 
 		C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
-		Gui::DrawScreen(false);
-		Gui::ScreenLogic(hDown, hHeld, touch, true, false);
 		C3D_FrameEnd(0);
 		if (exiting) {
 			if (!fadeout)	break;
 		}
 
-		Gui::fadeEffects(6, 6, false);
 	}
 
 	Init::Exit();
@@ -63,7 +49,7 @@ Result Init::MainLoop() {
 }
 
 Result Init::Exit() {
-	Gui::exit();
+	UI::fini();
 	gfxExit();
 	cfguExit();
 	romfsExit();

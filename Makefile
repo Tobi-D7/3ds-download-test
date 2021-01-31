@@ -33,10 +33,10 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	3ds-download-test
 BUILD		:=	build
-UNIVCORE	:=	Universal-Core d73dsextras
-SOURCES		:=	$(UNIVCORE) source source/gui source/screens
+D7CE		:=  D7-Core-Engine
+SOURCES		:=	$(D7CE) source source/gui source/screens
 DATA		:=	data
-INCLUDES	:=	$(UNIVCORE) include include/gui include/screens
+INCLUDES	:=	$(D7CE) include include/gui include/screens
 GRAPHICS	:=	assets/gfx
 #GFXBUILD	:=	$(BUILD)
 APP_AUTHOR	:=	Tobi-D7
