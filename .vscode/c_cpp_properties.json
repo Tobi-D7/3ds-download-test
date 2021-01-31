@@ -5,7 +5,7 @@
             "includePath": [
                 "${workspaceFolder}",
                 "${workspaceFolder}\\include\\**",
-                "${workspaceFolder}\\D7-Core-Engine\\**",
+                "${workspaceFolder}\\D7-Core\\**",
                 "C:\\devkitPro\\libctru\\include\\**",
                 "C:\\devkitPro\\portlibs\\3ds\\include\\**"
             ],
