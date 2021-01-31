@@ -46,7 +46,7 @@ ROMFS		:=	romfs
 GFXBUILD	:=	$(ROMFS)/gfx
 
 #---------------------------------------------------------------------------------
-# External tools
+# External tools...
 #---------------------------------------------------------------------------------
 ifeq ($(OS),Windows_NT)
 BANNERTOOL ?= bannertool.exe
