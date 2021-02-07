@@ -1,6 +1,6 @@
 #include "includes.hpp"
 
-class Structs {
+class Struct {
 public:
 	struct ButtonPos {
 		int x;

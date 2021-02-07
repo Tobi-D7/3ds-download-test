@@ -60,6 +60,7 @@ Result UI::loadFont(C2D_Font &bcfnt, const char *path)
 Result UI::unloadFont(C2D_Font &bcfnt)
 {
 	if (bcfnt) C2D_FontFree(bcfnt);
+	return 0;
 }
 Result UI::reinit(void)
 {
