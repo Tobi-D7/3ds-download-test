@@ -18,7 +18,7 @@ int main()
                  downloadToFile("https://github.com/Creckeryop/3dsCookieClicker/archive/refs/heads/master.zip", "sdmc:/CC.zip");
          } 
          snprintf(str, sizeof(str), (%.2f%%), ((float)downloadNow/(float)downloadTotal) * 100.0f); 
-         pritf(str);
+         printf(str);
     }
     
 }
