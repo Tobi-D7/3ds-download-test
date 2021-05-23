@@ -1,5 +1,6 @@
 #include <3ds.h>
 #include <download.hpp>
+#include <curl/curl.h>
 
 extern curl_off_t downloadTotal;
 extern curl_off_t downloadNow;
