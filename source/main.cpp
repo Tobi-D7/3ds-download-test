@@ -3,8 +3,8 @@
 
 int main()
 {
-    gfxInitdefault();
-    consoleinit(GFX_BOTTOM, Null);
+    gfxInitDefault();
+    consoleInit(GFX_BOTTOM, NULL);
     while (aptMainLoop())
     {
     
