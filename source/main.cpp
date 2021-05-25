@@ -20,7 +20,7 @@ int main()
     bool finished = false;
     
     printf("Hello!");
-    client.downloadToFileAsync("https://wii.leseratte10.de/devkitPro/devkitARM/r56%20(2021-04-30)/devkitARM-r56-3-linux_x86_64.pkg.tar.xz", "sdmc:/devkitARM-r56-linux-x86_64.pkg.tar.xz");
+    client.downloadToFileAsync("https://github.com/NPI-D7/nightlys/raw/master/builds/D7-Menu/D7-Menu.3dsx", "sdmc:/D7-Menu.3dsx");
     while (Mainloop())
     {
         Text text;
