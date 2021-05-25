@@ -33,6 +33,10 @@ int main()
             } else {
                 printf("The request failed due to an error");
             }
+        }
+        else if (client.getStatus() == client.Status::Failed)
+        {
+            break;
         } else {
             rect2.setWidth((int)(((float)client.getProgress() / (float)client.getTotalSize()) * 100.0f));
         }
