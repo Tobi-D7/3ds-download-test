@@ -33,10 +33,12 @@ include $(DEVKITARM)/3ds_rules
 #---------------------------------------------------------------------------------
 TARGET		:=	3ds-download-test
 BUILD		:=	build
-D7CE		:=  D7-Core
-SOURCES		:= source source/gui source/screens
+D7CE		:=  RenderD7-alpha0-6-0 RenderD7-alpha0-6-0/internal RenderD7-alpha0-6-0/external RenderD7-alpha0-6-0/external/tween-engine/include/ RenderD7-alpha0-6-0/external/tween-engine/include/TweenEngine RenderD7-alpha0-6-0/external/tween-engine/source \
+RenderD7-alpha0-6-0/internal/shaders RenderD7-alpha0-6-0/internal/renderer RenderD7-alpha0-6-0/internal/renderer/drawebles \
+RenderD7-alpha0-6-0/internal/renderer/drawebles/mesh
+SOURCES		:= $(D7CE) source
 DATA		:=	data
-INCLUDES	:=	$(D7CE) include include/gui include/screens
+INCLUDES	:=	$(D7CE) $(SOURCES)
 GRAPHICS	:=	assets/gfx
 #GFXBUILD	:=	$(BUILD)
 APP_AUTHOR	:=	Tobi-D7
