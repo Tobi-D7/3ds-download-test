@@ -36,7 +36,7 @@ int main()
         }
         else if (client.getStatus() == client.Status::Failed)
         {
-            break;
+            client.cancel();
         } else {
             rect2.setWidth((int)(((float)client.getProgress() / (float)client.getTotalSize()) * 100.0f));
         }
