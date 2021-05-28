@@ -43,7 +43,6 @@ jobs:
       - name: Build
         id: build
         run: |
-          sudo chmod +x /tools/selenacc
           sudo mv tools/selenacc /usr/local/bin
           make
           mkdir -p ~/artifacts
