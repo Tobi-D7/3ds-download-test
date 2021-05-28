@@ -89,7 +89,8 @@
         "typeindex": "cpp",
         "variant": "cpp",
         "forward_list": "cpp",
-        "*.disabled": "cpp"
+        "*.disabled": "cpp",
+        "3ds.h": "c"
     },
     "C_Cpp.default.intelliSenseMode": "gcc-arm"
 }

@@ -139,7 +139,7 @@ endif
 export OFILES_SOURCES 	:=	$(CPPFILES:.cpp=.o) $(CFILES:.c=.o) $(SFILES:.s=.o)
 
 export OFILES_BIN	:=	$(addsuffix .o,$(BINFILES)) \
-			$(VSHFILES:.vsh=.shbin.o) $(SHLISTFILES:.shlist=.shbin.o) \
+			$(PICAFILES:.v.pica=.shbin.o) $(SHLISTFILES:.shlist=.shbin.o) \
 			$(addsuffix .o,$(T3XFILES))
 
 export OFILES := $(OFILES_BIN) $(OFILES_SOURCES)

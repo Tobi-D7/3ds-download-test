@@ -2,10 +2,11 @@
 
 int main()
 {
-    d7gfx::InitApp();   
+    d7gfx::InitApp();  
+    d7gfx::Color sky(122, 145, 221); 
     d7gfx::Renderer renderer(true);
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Bottom);
-    d7gfx::Cube cube(2, 3, 4);
+    d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
     d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
@@ -61,12 +62,15 @@ int main()
             cam.moveZ(dirZ);
         }
 
-
+        cube.rotatePitch(1);
+        cube.rotateYaw(1);
+        cube.rotateRoll(1);
         spr1.setScale(0.1,0.1);
         renderer.drawTop(rec);
         renderer.drawTop(spr1);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.Render(true);
+        renderer.setClearColor(sky);
     }
     d7gfx::ExitApp();
     
