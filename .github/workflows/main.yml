@@ -39,6 +39,8 @@ jobs:
           sudo chmod +x makerom
           mv makerom /usr/local/bin
           rm makerom-v0.17-ubuntu_x86_64.zip
+          sudo chmod +x /tools/selenacc
+          sudo mv tools/selenacc /usr/local/bin
       - name: Build
         id: build
         run: |

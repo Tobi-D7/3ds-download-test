@@ -7,7 +7,7 @@
                 "${workspaceFolder}/RenderD7-alpha0-6-0/**",
                 "${workspaceFolder}/RenderD7-alpha0-6-0/external/**",
                 "${workspaceFolder}/RenderD7-alpha0-6-0/external/tween-engine/include/**",
-                "${workspaceFolder}/build/**",
+                //"${workspaceFolder}/build/**",
                 
                 "/opt/devkitpro/libctru/include/**",
                 "/opt/devkitpro/portlibs/3ds/include/**"
