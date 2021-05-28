@@ -39,11 +39,12 @@ jobs:
           sudo chmod +x makerom
           mv makerom /usr/local/bin
           rm makerom-v0.17-ubuntu_x86_64.zip
-          sudo chmod +x /tools/selenacc
-          sudo mv tools/selenacc /usr/local/bin
+          
       - name: Build
         id: build
         run: |
+          sudo chmod +x /tools/selenacc
+          sudo mv tools/selenacc /usr/local/bin
           make
           mkdir -p ~/artifacts
           cp 3ds-download-test.3dsx ~/artifacts
