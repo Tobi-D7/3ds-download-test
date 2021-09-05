@@ -12,8 +12,8 @@ int main()
     d7gfx::Texture tex1;
     //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
-    d7gfx::SkyBox skyb(1.0f);
-    skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
+    //d7gfx::SkyBox skyb(1.0f);
+    //skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
@@ -70,7 +70,7 @@ int main()
        // spr1.setScale(0.1,0.1);
         renderer.drawTop(rec);
        // renderer.drawTop(spr1);
-        renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
+        //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.Render(true);
         renderer.setClearColor(sky);
