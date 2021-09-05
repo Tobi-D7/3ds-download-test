@@ -13,6 +13,7 @@ int main()
     //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
     d7gfx::SkyBox skyb(1.0f);
+    skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
