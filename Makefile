@@ -39,7 +39,7 @@ RenderD7-alpha0-6-0/internal/renderer/drawebles/mesh
 SOURCES		:= $(D7CE) source
 DATA		:=	data
 INCLUDES	:=	$(D7CE) $(SOURCES)
-GRAPHICS	:=	assets/gfx
+GRAPHICS	:=	gfx
 #GFXBUILD	:=	$(BUILD)
 APP_AUTHOR	:=	Tobi-D7
 APP_DESCRIPTION := An example.
