@@ -69,6 +69,7 @@ int main()
        // spr1.setScale(0.1,0.1);
         renderer.drawTop(rec);
        // renderer.drawTop(spr1);
+        renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.Render(true);
         renderer.setClearColor(sky);
