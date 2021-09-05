@@ -12,6 +12,7 @@ int main()
     d7gfx::Texture tex1;
     //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
+    d7gfx::SkyBox skyb(1.0f);
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
