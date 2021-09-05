@@ -120,7 +120,8 @@ namespace d7gfx {
     void SkyBox::SetSkyBoxTex(std::string sheet)
     {
         if(!genskybox(&sktex, &sk_cube, sheet)) svcBreak(USERBREAK_PANIC);
-
+        C3D_TexSetFilter(&skybox_tex, GPU_LINEAR, GPU_LINEAR);
+	C3D_TexSetWrap(&skybox_tex, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
         d7gfx::Texture skktex;
         skktex.setTextuere(&sktex);
         
