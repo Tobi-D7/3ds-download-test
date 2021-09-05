@@ -10,9 +10,9 @@ int main()
     d7gfx::Color c1(25, 100, 244);
     d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
-    tex1.loadFromFile("romfs:/gfx/d7.png");
+    //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
-    spr1.setTexture(tex1);
+    //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
     while (d7gfx::Mainloop())
@@ -65,9 +65,9 @@ int main()
         cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
-        spr1.setScale(0.1,0.1);
+       // spr1.setScale(0.1,0.1);
         renderer.drawTop(rec);
-        renderer.drawTop(spr1);
+       // renderer.drawTop(spr1);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.Render(false);
         renderer.setClearColor(sky);
