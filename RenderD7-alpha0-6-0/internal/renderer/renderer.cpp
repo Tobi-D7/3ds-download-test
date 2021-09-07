@@ -480,6 +480,10 @@ namespace d7gfx
                 C3D_LightEnvBind(&m_lightEnvTop);
         }
     }
-    
+    void Renderer::setWide(bool t_wide)
+    {
+        this->m_wide = t_wide;
+        
+    }
     
 }
