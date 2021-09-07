@@ -29,7 +29,7 @@ namespace d7gfx
         void set3d(bool t_enabled);
         void useCulling(bool t_useCulling);
         bool isUsingCulling();
-        void setWide(t_wide);
+        void setWide(bool t_wide);
         
         void setClearColor(d7gfx::Color t_color);
         void setClearColor(d7gfx::Color t_color, d7gfx::RenderContext::ScreenTarget t_target);
