@@ -72,7 +72,7 @@ int main()
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
-        renderer.Render(false);
+        renderer.Render(true);
         renderer.setClearColor(sky);
     }
     d7gfx::ExitApp();
