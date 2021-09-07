@@ -483,7 +483,7 @@ namespace d7gfx
     void Renderer::setWide(bool t_wide)
     {
         this->m_wide = t_wide;
-        
+        gfxSetWide(t_wide);
     }
     
 }
