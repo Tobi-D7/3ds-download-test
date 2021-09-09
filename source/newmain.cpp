@@ -1,5 +1,6 @@
 #include <d7gfx-driver.hpp>
 //1
+bool _dcl = true;
 int main()
 {
     d7gfx::InitApp();  
@@ -39,6 +40,7 @@ int main()
 
 
         if(d7_hDown & KEY_START)break;
+        if(d7_hDown & KEY_A) if (!_dcl) _dcl ? true : false;
         if(d7_hHeld & KEY_CPAD_DOWN) {
             float dirX = std::sin(cam.getYaw(true)) * 0.03;
             float dirZ = -std::cos(cam.getYaw(true)) * 0.03;
@@ -72,7 +74,7 @@ int main()
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
-        renderer.Render(true);
+        renderer.Render(_dcl);
         renderer.setClearColor(sky);
     }
     d7gfx::ExitApp();
