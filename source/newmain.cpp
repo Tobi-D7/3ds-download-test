@@ -9,7 +9,9 @@ int main()
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Bottom);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
-    d7gfx::Rect rec(0, 0, 200, 200, c1);
+    d7gfx::Model MdL;
+    MdL.loadFromFile("sdmc://romfs/gfx/playcoin.obj");
+   // d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
     //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
@@ -69,8 +71,9 @@ int main()
         cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
+        renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
-        renderer.drawTop(rec);
+        //renderer.drawTop(rec);
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
