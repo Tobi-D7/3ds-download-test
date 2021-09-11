@@ -4,7 +4,7 @@ bool _dcl = true;
 int main()
 {
     d7gfx::InitApp();  
-    consoleInit(GFX_TOP, GFX_LEFT);
+    consoleInit(GFX_TOP, NULL);
     d7gfx::Color sky(122, 145, 221); 
     d7gfx::Renderer renderer(true);
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Bottom);
@@ -44,7 +44,8 @@ int main()
 
 
         if(d7_hDown & KEY_START)break;
-        if(d7_hDown & KEY_A) if (!_dcl) _dcl ? true : false;
+        if(d7_hDown & KEY_A) _dcl = true;
+        if(d7_hDown & KEY_B) _dcl = false;
         if(d7_hHeld & KEY_CPAD_DOWN) {
             float dirX = std::sin(cam.getYaw(true)) * 0.03;
             float dirZ = -std::cos(cam.getYaw(true)) * 0.03;
