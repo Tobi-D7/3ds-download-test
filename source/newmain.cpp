@@ -10,7 +10,7 @@ int main()
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
     d7gfx::Model MdL;
-    MdL.loadFromFile("sdmc:/romfs/gfx/playcoin.obj");
+    MdL.loadFromFile("romfs:/gfx/playcoin.obj");
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
     //tex1.loadFromFile("romfs:/gfx/d7.png");
