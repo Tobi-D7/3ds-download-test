@@ -71,7 +71,7 @@ int main()
         cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
-        renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawBottom(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
         //renderer.drawTop(rec);
        // renderer.drawTop(spr1);
