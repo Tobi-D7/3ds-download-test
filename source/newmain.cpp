@@ -28,7 +28,7 @@ int main()
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
-    mark7.setPodition(10, 0, 0);
+    mark7.setPosition(10, 0, 0);
     while (d7gfx::Mainloop())
     {
         hidScanInput();
