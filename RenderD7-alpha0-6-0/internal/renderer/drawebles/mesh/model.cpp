@@ -15,6 +15,7 @@ namespace d7gfx {
                 objl::Mesh curMesh = loader.LoadedMeshes[i];
                 
                 for (unsigned int j = 0; j < curMesh.Vertices.size() - 2; j += 3) {
+                    printf("\x1b[4;1HLoading Model: %i/%i\x1b[K", j, (int)curMesh.Vertices.size());
                     addPolygon(d7gfx::Mesh::Polygon(
                         { {
                             curMesh.Vertices[j].Position.X,
