@@ -20,7 +20,7 @@ int main()
     mark7.setScale(0.2, 0.2, 0.2);
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
-    tex1.loadFromFile("romfs:/gfx/mk7.png");
+    tex1.loadFromFile("romfs:/gfx/moon.png");
     d7gfx::Texture ptex;
     ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
     mark7.bindTexture(tex1);
