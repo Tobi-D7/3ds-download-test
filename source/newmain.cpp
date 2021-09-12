@@ -12,7 +12,7 @@ int main()
     d7gfx::Color c1(25, 100, 244);
     d7gfx::Model MdL;
     d7gfx::Model tpt;
-    tpt.loadFromFile("romfs:/gfx/playcoin.obj");
+    tpt.loadFromFile("romfs:/gfx/teapot.obj");
     MdL.loadFromFile("romfs:/gfx/playcoin.obj");
     MdL.setScale(0.1, 0.1, 0.1);
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
@@ -20,7 +20,7 @@ int main()
     //tex1.loadFromFile("romfs:/gfx/d7.png");
     d7gfx::Sprite spr1;
     //d7gfx::SkyBox skyb(1.0f);
-    tpt.setPosition(70, 0, 70);
+    tpt.setPosition(30, 0, 0);
     //skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
@@ -78,7 +78,7 @@ int main()
         cube.rotateYaw(1);
         cube.rotateRoll(1);
         MdL.rotateYaw(1);
-        tpt.rotatePitch(1);
+        tpt.rotateYaw(1);
         renderer.drawBottom(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
         renderer.drawBottom(tpt, d7gfx::RenderContext::Mode::Spatial);
