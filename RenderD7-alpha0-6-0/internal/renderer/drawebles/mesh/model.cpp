@@ -56,7 +56,6 @@ namespace d7gfx {
                             curMesh.Vertices[j + 2].Normal.Z
                         } }
                     ));
-                    updateVBO();
                 }
             }
 
