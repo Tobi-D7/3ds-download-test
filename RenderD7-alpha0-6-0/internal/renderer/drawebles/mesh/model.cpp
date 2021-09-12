@@ -11,7 +11,7 @@ namespace d7gfx {
             }
 
             for (unsigned int i = 0; i < loader.LoadedMeshes.size(); i++) {
-                printf("\x1b[3;1HLoading Model: %i/%i\x1b[K", i, (int)loader.LoadedMeshes.size());
+                printf("\x1b[3;1HLoading Model Vertices: %i/%i\x1b[K", i, (int)loader.LoadedMeshes.size());
                 objl::Mesh curMesh = loader.LoadedMeshes[i];
                 
                 for (unsigned int j = 0; j < curMesh.Vertices.size() - 2; j += 3) {
