@@ -14,14 +14,17 @@ int main()
     d7gfx::Model mark7;
     d7gfx::Model tpt;
     tpt.loadFromFile("romfs:/gfx/teapot.obj");
-    //MdL.loadFromFile("romfs:/gfx/playcoin.obj");
+    MdL.loadFromFile("romfs:/gfx/playcoin.obj");
     mark7.loadFromFile("romfs:/gfx/mk7.obj");
     MdL.setScale(0.1, 0.1, 0.1);
     mark7.setScale(0.2, 0.2, 0.2);
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
     tex1.loadFromFile("romfs:/gfx/mk7.png");
+    d7gfx::Texture ptex;
+    ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
     mark7.bindTexture(tex1);
+    MdL.bindTexture(ptex);
     d7gfx::Sprite spr1;
     //d7gfx::SkyBox skyb(1.0f);
     tpt.setPosition(5, 0, 0);
