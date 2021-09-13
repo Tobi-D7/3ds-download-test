@@ -4,10 +4,10 @@ bool _dcl = true;
 int main()
 {
     d7gfx::InitApp();  
-    consoleInit(GFX_TOP, NULL);
+    consoleInit(GFX_BOTTOM, NULL);
     d7gfx::Color sky(122, 145, 221); 
     d7gfx::Renderer renderer(true);
-    d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Bottom);
+    d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
     d7gfx::Model MdL;
@@ -87,10 +87,10 @@ int main()
         cube.rotateRoll(1);
         MdL.rotateYaw(1);
         tpt.rotateYaw(1);
-        renderer.drawBottom(MdL, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
-        renderer.drawBottom(tpt, d7gfx::RenderContext::Mode::Spatial);
-        renderer.drawBottom(mark7, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(tpt, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
         //renderer.drawTop(rec);
