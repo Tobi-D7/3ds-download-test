@@ -16,7 +16,7 @@ int main()
     tpt.loadFromFile("romfs:/gfx/teapot.obj");
     MdL.loadFromFile("romfs:/gfx/playcoin.obj");
     mark7.loadFromFile("romfs:/gfx/moon.obj");
-    MdL.setPosition(0, 0, 0);
+    MdL.setPosition(-2, 0, 0);
    // mark7.setScale(0.2, 0.2, 0.2);
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture tex1;
