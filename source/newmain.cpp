@@ -1,4 +1,5 @@
 #include <d7gfx-driver.hpp>
+#include <renderd7.hpp>
 //1
 bool _dcl = true;
 int main()
@@ -36,7 +37,7 @@ int main()
     while (d7gfx::Mainloop())
     {
         hidScanInput();
-        printf(RenderD7::GetFramerate().c_str());
+        printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate());
         u32 d7_hDown = hidKeysDown();
         u32 d7_hHeld = hidKeysHeld();
         if(d7_hHeld & KEY_CSTICK_DOWN) 
