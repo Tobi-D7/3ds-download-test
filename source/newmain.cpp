@@ -36,6 +36,7 @@ int main()
     while (d7gfx::Mainloop())
     {
         hidScanInput();
+        printf(RenderD7::GetFramerate().c_str());
         u32 d7_hDown = hidKeysDown();
         u32 d7_hHeld = hidKeysHeld();
         if(d7_hHeld & KEY_CSTICK_DOWN) 
