@@ -38,9 +38,9 @@ int main()
     {
         hidScanInput();
         //printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate().c_str());
-        printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
-	printf("\x1b[7;1HGPU:     %6.2f%%\x1b[K", C3D_GetDrawingTime()*6.0f);
-	printf("\x1b[8;1HCmdBuf:  %6.2f%%\x1b[K", C3D_GetCmdBufUsage()*100.0f);
+        //printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
+	//printf("\x1b[7;1HGPU:     %6.2f%%\x1b[K", C3D_GetDrawingTime()*6.0f);
+	//printf("\x1b[8;1HCmdBuf:  %6.2f%%\x1b[K", C3D_GetCmdBufUsage()*100.0f);
 
         u32 d7_hDown = hidKeysDown();
         u32 d7_hHeld = hidKeysHeld();
