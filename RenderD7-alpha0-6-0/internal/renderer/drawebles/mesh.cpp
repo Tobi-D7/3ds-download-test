@@ -253,7 +253,7 @@ namespace d7gfx {
             C3D_FVUnifMtx4x4(GPU_VERTEX_SHADER, t_context.getModelUniform(),  &t_context.getModelMatrix());
 
             // draw the VBO
-            C3D_DrawArrays(GPU_TRIANGLE_FAN, 0, m_vertices.size());
+            C3D_DrawArrays(GPU_GEOMETRY_PRIM, 0, m_vertices.size());
         }
     }
 
