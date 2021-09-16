@@ -6,7 +6,7 @@ int main()
 {
     d7gfx::InitApp();  
     consoleInit(GFX_BOTTOM, NULL);
-    d7gfx::Color sky(122, 145, 221); 
+    d7gfx::Color sky(122, 145, 255); 
     d7gfx::Renderer renderer(true);
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
