@@ -45,7 +45,7 @@ jobs:
         id: build
         run: |
           sudo mv tools/selenacc /usr/local/bin
-          make -j4 
+          make
           mkdir -p ~/artifacts
           cp 3ds-download-test.3dsx ~/artifacts
           
