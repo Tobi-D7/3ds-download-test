@@ -18,7 +18,7 @@
 #include <math.h>
 
 // Print progress to console while loading (large models)
-// #define OBJL_CONSOLE_OUTPUT
+#define OBJL_CONSOLE_OUTPUT
 
 // Namespace: OBJL
 //
@@ -150,6 +150,7 @@ namespace objl
 	{
 		Material()
 		{
+			name;
 			Ns = 0.0f;
 			Ni = 0.0f;
 			d = 0.0f;
@@ -648,7 +649,7 @@ namespace objl
 
 					if (temp.size() != 1)
 					{
-						for (unsigned int i = 0; i < temp.size() - 1; i++)
+						for (int i = 0; i < temp.size() - 1; i++)
 						{
 							pathtomat += temp[i] + "/";
 						}
@@ -685,13 +686,13 @@ namespace objl
 			file.close();
 
 			// Set Materials for each Mesh
-			for (unsigned int i = 0; i < MeshMatNames.size(); i++)
+			for (int i = 0; i < MeshMatNames.size(); i++)
 			{
 				std::string matname = MeshMatNames[i];
 
 				// Find corresponding material name in loaded materials
 				// when found copy material variables into mesh material
-				for (unsigned int j = 0; j < LoadedMaterials.size(); j++)
+				for (int j = 0; j < LoadedMaterials.size(); j++)
 				{
 					if (LoadedMaterials[j].name == matname)
 					{
@@ -721,7 +722,7 @@ namespace objl
 		std::vector<Material> LoadedMaterials;
 
 	private:
-		// Generate vertices from a list of positions,
+		// Generate vertices from a list of positions, 
 		//	tcoords, normals and a face line
 		void GenVerticesFromRawOBJ(std::vector<Vertex>& oVerts,
 			const std::vector<Vector3>& iPositions,
@@ -739,7 +740,7 @@ namespace objl
 			for (int i = 0; i < int(sface.size()); i++)
 			{
 				// See What type the vertex is.
-				int vtype = -1;
+				int vtype;
 
 				algorithm::split(sface[i], svert, "/");
 
@@ -816,8 +817,8 @@ namespace objl
 			}
 
 			// take care of missing normals
-			// these may not be truly acurate but it is the
-			// best they get for not compiling a mesh with normals
+			// these may not be truly acurate but it is the 
+			// best they get for not compiling a mesh with normals	
 			if (noNormal)
 			{
 				Vector3 A = oVerts[0].Position - oVerts[1].Position;
@@ -859,7 +860,7 @@ namespace objl
 			while (true)
 			{
 				// For every vertex
-				for (unsigned int i = 0; i < tVerts.size(); i++)
+				for (int i = 0; i < int(tVerts.size()); i++)
 				{
 					// pPrev = the previous vertex in the list
 					Vertex pPrev;
