@@ -194,7 +194,7 @@ namespace d7gfx {
     }
 
     void Mesh::bindTexture(d7gfx::Texture& t_texture, int id, bool t_resetMaterial) {
-        m_useTexture = true;
+        m_useTexture[id] = true;
         m_texture[id] = t_texture;
 
         if (t_resetMaterial) {
@@ -203,8 +203,8 @@ namespace d7gfx {
         }
     }
 
-    void Mesh::unbindTexture(bool t_resetMaterial) {
-        m_useTexture = false;
+    void Mesh::unbindTexture(int id, bool t_resetMaterial) {
+        m_useTexture[id] = false;
 
         if (t_resetMaterial) {
             m_material = d7gfx::Material();
@@ -244,7 +244,7 @@ namespace d7gfx {
                 }
                  else {
                     // disable textures
-                    t_context.enableTextures[id](false);
+                    t_context.enableTextures(false);
                 }
             } 
 
