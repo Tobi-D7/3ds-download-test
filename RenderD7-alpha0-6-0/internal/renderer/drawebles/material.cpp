@@ -9,6 +9,14 @@ namespace d7gfx {
             updateMaterial();
         }
 
+    Material::Material(int kar, int kag, int kab, int kdr, int kdg, int kdb, int ksr, int ksg, int ksb)
+    {
+         this->setAmbient(kar, kag, kab);
+         this->setDiffuse(kda, kdg, kdb);
+         this->setSpecular0(ksr, kdg, ksb);
+
+    }
+
     Material::Material(C3D_Material t_material) {
         setMaterial(t_material);
         updateMaterial();
