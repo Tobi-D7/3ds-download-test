@@ -244,7 +244,7 @@ namespace d7gfx {
                 }
                  else {
                     // disable textures
-                    t_context.enableTextures(false);
+                  //  t_context.enableTextures(false);
                 }
             } 
 
