@@ -193,9 +193,9 @@ namespace d7gfx {
         return m_material;
     }
 
-    void Mesh::bindTexture(d7gfx::Texture& t_texture, bool t_resetMaterial) {
+    void Mesh::bindTexture(d7gfx::Texture& t_texture, int id, bool t_resetMaterial) {
         m_useTexture = true;
-        m_texture = t_texture;
+        m_texture[id] = t_texture;
 
         if (t_resetMaterial) {
             m_material.setAmbient(125, 125, 125);
@@ -237,8 +237,14 @@ namespace d7gfx {
                 t_context.enableTextures(true);
 
                 // bind the texture
-                C3D_TexSetFilter(m_texture.getTexture(), GPU_LINEAR, GPU_LINEAR);
-                C3D_TexBind(0, m_texture.getTexture());
+                for (int id = 0; id < 2; id++)
+                {
+                    if (m_texture[id])
+                    {
+                        C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
+                        C3D_TexBind(0, m_texture[id].getTexture());
+                    }
+                }
             } else {
                 // disable textures
                 t_context.enableTextures(false);
