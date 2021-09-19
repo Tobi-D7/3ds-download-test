@@ -215,8 +215,8 @@ namespace d7gfx {
         return m_texture[id];
     }
 
-    bool Mesh::isTextureBound() {
-        return m_useTexture;
+    bool Mesh::isTextureBound(int id) {
+        return m_useTexture[id];
     }
 
     void Mesh::draw(d7gfx::RenderContext t_context) {
@@ -231,19 +231,16 @@ namespace d7gfx {
 
             // set material
             C3D_LightEnvMaterial(&t_context.getLightEnvironment(), m_material.getMaterial());
-
-            if (m_useTexture) {
+            for (int id = 0; id < 2; id++)
+            {               
+                if (m_useTexture[id]) {
                 // enable textures
                 t_context.enableTextures(true);
 
                 // bind the texture
-                for (int id = 0; id < 2; id++)
-                {
-                    if (m_texture[id] != NULL)
-                    {
-                        C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
-                        C3D_TexBind(0, m_texture[id].getTexture());
-                    }
+                
+                    C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
+                    C3D_TexBind(0, m_texture[id].getTexture()); 
                 }
             } else {
                 // disable textures
