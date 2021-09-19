@@ -307,7 +307,7 @@ namespace d7gfx {
          * @brief Returns a reference to the current texture
          * @return The current texture (or nullptr if no texture was bound)
          */
-        d7gfx::Texture& getTexture();
+        d7gfx::Texture& getTexture(int id = 0);
 
         /**
          * @brief Returns whether a texture was bound or not
