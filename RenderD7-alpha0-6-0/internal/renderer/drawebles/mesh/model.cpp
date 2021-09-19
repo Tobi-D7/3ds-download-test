@@ -12,7 +12,7 @@ namespace d7gfx {
             for (unsigned int m = 0; m < loader.LoadedMaterials.size(); m++)
             {
                  Material tm(loader.LoadedMaterials[m].Ka.X, loader.LoadedMaterials[m].Ka.Y, loader.LoadedMaterials[m].Ka.Z, loader.LoadedMaterials[m].Kd.X, loader.LoadedMaterials[m].Kd.Y, loader.LoadedMaterials[m].Ks.Z, loader.LoadedMaterials[m].Ks.X, loader.LoadedMaterials[m].Ks.Y, loader.LoadedMaterials[m].Ks.Z);
-                 this->m_matetial = tm;
+                 this->setMaterial(tm);
             }
             for (unsigned int i = 0; i < loader.LoadedMeshes.size(); i++) {
                 printf("\x1b[3;1HLoading Model: %i/%i\x1b[K", i, (int)loader.LoadedMeshes.size());
