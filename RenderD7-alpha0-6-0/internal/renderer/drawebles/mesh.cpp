@@ -13,7 +13,7 @@ namespace d7gfx {
         m_scaleX(1.0f),
         m_scaleY(1.0f),
         m_scaleZ(1.0f),
-        m_useTexture[3](false) { /* do nothing */ }
+        m_useTexture(false)[3] { /* do nothing */ }
 
     Mesh::~Mesh() {
         linearFree(m_vbo);
@@ -235,7 +235,7 @@ namespace d7gfx {
             {               
                 if (m_useTexture[id]) {
                 // enable textures
-                t_context.enableTextures[id](true);
+                t_context.enableTextures(true);
 
                 // bind the texture
                 
