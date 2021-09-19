@@ -13,7 +13,7 @@ namespace d7gfx {
         m_scaleX(1.0f),
         m_scaleY(1.0f),
         m_scaleZ(1.0f),
-        m_useTexture(false) { /* do nothing */ }
+        m_useTexture[3](false) { /* do nothing */ }
 
     Mesh::~Mesh() {
         linearFree(m_vbo);
@@ -235,17 +235,18 @@ namespace d7gfx {
             {               
                 if (m_useTexture[id]) {
                 // enable textures
-                t_context.enableTextures(true);
+                t_context.enableTextures[id](true);
 
                 // bind the texture
                 
                     C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
                     C3D_TexBind(0, m_texture[id].getTexture()); 
                 }
-            } else {
-                // disable textures
-                t_context.enableTextures(false);
-            }
+                 else {
+                    // disable textures
+                    t_context.enableTextures[id](false);
+                }
+            } 
 
             // create buffer
             C3D_BufInfo* bufInfo = C3D_GetBufInfo();
