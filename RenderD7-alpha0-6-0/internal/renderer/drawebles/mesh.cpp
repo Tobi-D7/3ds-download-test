@@ -13,7 +13,7 @@ namespace d7gfx {
         m_scaleX(1.0f),
         m_scaleY(1.0f),
         m_scaleZ(1.0f),
-        m_useTexture(false[3]) { /* do nothing */ }
+        /*m_useTexture(false[3])*/ { /* do nothing */ }
 
     Mesh::~Mesh() {
         linearFree(m_vbo);
