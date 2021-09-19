@@ -301,7 +301,7 @@ namespace d7gfx {
          * @brief Unbinds the bound texture (disables texture using)
          * @param t_resetMaterial Whether or not to reset the material to the default material
          */
-        void unbindTexture(bool t_resetMaterial = true);
+        void unbindTexture(int id = 0, bool t_resetMaterial = true);
 
         /**
          * @brief Returns a reference to the current texture
@@ -313,7 +313,7 @@ namespace d7gfx {
          * @brief Returns whether a texture was bound or not
          * @return `true` if a texture was bound, `false` otherwise
          */
-        bool isTextureBound();
+        bool isTextureBound(int id = 0);
 
         /**
          * @brief Draws the mesh
@@ -330,7 +330,7 @@ namespace d7gfx {
     private:
         /* data */
         float m_rotationX, m_rotationY, m_rotationZ, m_posX, m_posY, m_posZ, m_scaleX, m_scaleY, m_scaleZ;
-        bool m_useTexture;
+        bool m_useTexture[3];
 
         // polygons
         std::vector<d7gfx::Mesh::Polygon::Vertex> m_vertices;
