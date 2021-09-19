@@ -211,8 +211,8 @@ namespace d7gfx {
         }
     }
 
-    d7gfx::Texture& Mesh::getTexture() {
-        return m_texture;
+    d7gfx::Texture& Mesh::getTexture(int id) {
+        return m_texture[id];
     }
 
     bool Mesh::isTextureBound() {
@@ -239,7 +239,7 @@ namespace d7gfx {
                 // bind the texture
                 for (int id = 0; id < 2; id++)
                 {
-                    if (m_texture[id])
+                    if (m_texture[id] != NULL)
                     {
                         C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
                         C3D_TexBind(0, m_texture[id].getTexture());
