@@ -8,6 +8,7 @@ namespace d7gfx {
     public:
         
         Material();
+        Material(int kar, int kag, int kab, int kdr, int kdg, int kdb, int kdr, int kar, int ksb);
         Material(C3D_Material t_material);
         Material(const d7gfx::Material& t_source);
         virtual ~Material();
