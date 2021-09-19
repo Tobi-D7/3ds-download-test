@@ -9,7 +9,10 @@ namespace d7gfx {
                 printf("Failed!\n");
                 return false;
             }
-
+            for (int m = 0; m < loader.LoadedMaterials.size(); m++;)
+            {
+                 Material tm(loader.LoadedMaterials[m].Ka.X, 0,0,0,0,0,0,0,0);
+            }
             for (unsigned int i = 0; i < loader.LoadedMeshes.size(); i++) {
                 printf("\x1b[3;1HLoading Model: %i/%i\x1b[K", i, (int)loader.LoadedMeshes.size());
                 objl::Mesh curMesh = loader.LoadedMeshes[i];
