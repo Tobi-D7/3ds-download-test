@@ -330,7 +330,7 @@ namespace d7gfx {
     private:
         /* data */
         float m_rotationX, m_rotationY, m_rotationZ, m_posX, m_posY, m_posZ, m_scaleX, m_scaleY, m_scaleZ;
-        bool m_useTexture[3];
+        bool m_useTexture[3] = false;
 
         // polygons
         std::vector<d7gfx::Mesh::Polygon::Vertex> m_vertices;
