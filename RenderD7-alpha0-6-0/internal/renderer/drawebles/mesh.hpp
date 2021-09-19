@@ -295,7 +295,7 @@ namespace d7gfx {
          * @param t_texture       The texture to bind
          * @param t_resetMaterial Whether or not to reset the material so that it won't interfere with the texture
          */
-        void bindTexture(d7gfx::Texture& t_texture, bool t_resetMaterial = true);
+        void bindTexture(d7gfx::Texture& t_texture, int id = 0, bool t_resetMaterial = true);
 
         /**
          * @brief Unbinds the bound texture (disables texture using)
@@ -335,9 +335,9 @@ namespace d7gfx {
         // polygons
         std::vector<d7gfx::Mesh::Polygon::Vertex> m_vertices;
         d7gfx::Mesh::Polygon::Vertex* m_vbo;
-
+        
         // display properties
-        d7gfx::Texture m_texture;
+        d7gfx::Texture m_texture[3];
         d7gfx::Material m_material;
     };
 } /* d7gfx */
