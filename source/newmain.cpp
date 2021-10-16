@@ -14,8 +14,8 @@ int main()
     d7gfx::Model MdL;
    // d7gfx::Model mark7;
     d7gfx::Model tpt;
-    tpt.loadFromFile("romfs:/gfx/teapot.obj");
-   // MdL.loadFromFile("romfs:/gfx/playcoin.obj");
+    tpt.loadFromFile("romfs:/gfx/playcoin.obj");
+    MdL.loadFromFile("romfs:/gfx/playcoin.obj");
    // mark7.loadFromFile("romfs:/gfx/moon.obj");
     MdL.setPosition(-2, 0, 0);
    // mark7.setScale(0.2, 0.2, 0.2);
@@ -23,7 +23,7 @@ int main()
     d7gfx::Texture tex1;
    // tex1.loadFromFile("romfs:/gfx/moon.png");
     d7gfx::Texture ptex;
-    ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
+    //ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
    // mark7.bindTexture(tex1);
    // mark7.bindTexture(tex1, 1);
    // MdL.bindTexture(ptex);
