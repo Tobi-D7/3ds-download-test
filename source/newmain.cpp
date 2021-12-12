@@ -11,25 +11,25 @@ int main()
    // d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
-    d7gfx::Model MdL;
+   // d7gfx::Model MdL;
    // d7gfx::Model mark7;
     d7gfx::Model tpt;
-    tpt.loadFromFile("romfs:/gfx/playcoin.obj");
-    MdL.loadFromFile("romfs:/gfx/playcoin.obj");
+   // tpt.loadFromFile("romfs:/gfx/playcoin.obj");
+   // MdL.loadFromFile("romfs:/gfx/playcoin.obj");
    // mark7.loadFromFile("romfs:/gfx/moon.obj");
-    MdL.setPosition(-2, 0, 0);
+   // MdL.setPosition(-2, 0, 0);
    // mark7.setScale(0.2, 0.2, 0.2);
    // d7gfx::Rect rec(0, 0, 200, 200, c1);
-    d7gfx::Texture tex1;
+   // d7gfx::Texture tex1;
    // tex1.loadFromFile("romfs:/gfx/moon.png");
-    d7gfx::Texture ptex;
+   // d7gfx::Texture ptex;
     //ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
    // mark7.bindTexture(tex1);
    // mark7.bindTexture(tex1, 1);
    // MdL.bindTexture(ptex);
-    d7gfx::Sprite spr1;
+   // d7gfx::Sprite spr1;
     //d7gfx::SkyBox skyb(1.0f);
-    tpt.setPosition(5, 0, 0);
+   // tpt.setPosition(5, 0, 0);
     //skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
@@ -38,10 +38,10 @@ int main()
     while (d7gfx::Mainloop())
     {
         hidScanInput();
-        //printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate().c_str());
-        //printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
-	//printf("\x1b[7;1HGPU:     %6.2f%%\x1b[K", C3D_GetDrawingTime()*6.0f);
-	//printf("\x1b[8;1HCmdBuf:  %6.2f%%\x1b[K", C3D_GetCmdBufUsage()*100.0f);
+        printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate().c_str());
+        printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
+	printf("\x1b[7;1HGPU:     %6.2f%%\x1b[K", C3D_GetDrawingTime()*6.0f);
+	printf("\x1b[8;1HCmdBuf:  %6.2f%%\x1b[K", C3D_GetCmdBufUsage()*100.0f);
 
         u32 d7_hDown = hidKeysDown();
         u32 d7_hHeld = hidKeysHeld();
@@ -92,11 +92,11 @@ int main()
         cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
-        MdL.rotateYaw(1);
-        tpt.rotateYaw(1);
-        renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
+      //  MdL.rotateYaw(1);
+     //   tpt.rotateYaw(1);
+     //   renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
-        renderer.drawTop(tpt, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(cube, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
