@@ -8,12 +8,12 @@ int main()
     consoleInit(GFX_BOTTOM, NULL);
     d7gfx::Color sky(122, 145, 255); 
     d7gfx::Renderer renderer(true);
-   // d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
+    d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
    // d7gfx::Model MdL;
    // d7gfx::Model mark7;
-    d7gfx::Model tpt;
+    //d7gfx::Model tpt;
    // tpt.loadFromFile("romfs:/gfx/playcoin.obj");
    // MdL.loadFromFile("romfs:/gfx/playcoin.obj");
    // mark7.loadFromFile("romfs:/gfx/moon.obj");
@@ -45,7 +45,7 @@ int main()
 */
         u32 d7_hDown = hidKeysDown();
         u32 d7_hHeld = hidKeysHeld();
-       /* if(d7_hHeld & KEY_CSTICK_DOWN) 
+        if(d7_hHeld & KEY_CSTICK_DOWN) 
         {
             cam.rotatePitch(1);
             if (90 < cam.getPitch())
@@ -59,12 +59,12 @@ int main()
         }
         if(d7_hHeld & KEY_CSTICK_RIGHT) cam.rotateYaw(1);
         if(d7_hHeld & KEY_CSTICK_LEFT) cam.rotateYaw(-1);
-        */
+        
 
         if(d7_hDown & KEY_START)break;
         if(d7_hDown & KEY_A) _dcl = true;
         if(d7_hDown & KEY_B) _dcl = false;
-       /* if(d7_hHeld & KEY_CPAD_DOWN) {
+        if(d7_hHeld & KEY_CPAD_DOWN) {
             float dirX = std::sin(cam.getYaw(true)) * 0.03;
             float dirZ = -std::cos(cam.getYaw(true)) * 0.03;
             cam.moveX(dirX);
@@ -87,7 +87,7 @@ int main()
             float dirZ = std::sin(cam.getYaw(true)) * 0.03;
             cam.moveX(dirX);
             cam.moveZ(dirZ);
-        }*/
+        }
 
         cube.rotatePitch(1);
         cube.rotateYaw(1);
