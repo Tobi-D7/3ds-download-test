@@ -18,3 +18,4 @@
 #include "download.hpp"
 #include "d7gfxmain.hpp"
 #include "rect.hpp"
+#include "plane.hpp"
