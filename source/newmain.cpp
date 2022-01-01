@@ -22,8 +22,8 @@ int main()
     d7gfx::Rect rec(0, 0, 200, 200, c1);
    // d7gfx::Texture tex1;
    // tex1.loadFromFile("romfs:/gfx/moon.png");
-   // d7gfx::Texture ptex;
-    //ptex.loadFromFile("romfs:/gfx/PlayCoin.png");
+    d7gfx::Texture ptex;
+    ptex.loadFromFile("romfs:/gfx/texture.png");
    // mark7.bindTexture(tex1);
    // mark7.bindTexture(tex1, 1);
    // MdL.bindTexture(ptex);
@@ -35,6 +35,7 @@ int main()
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
   //  mark7.setPosition(10, 0, 0);
+    cube.bindTexture(ptex);
     while (d7gfx::Mainloop())
     {
         hidScanInput();
