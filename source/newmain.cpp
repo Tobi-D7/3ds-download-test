@@ -112,7 +112,7 @@ int main()
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
-        //renderer.drawBottom(rec);
+        renderer.drawBottom(rec);
         if (_mdl) renderer.drawTop(modl, d7gfx::RenderContext::Mode::Spatial);
   
        // renderer.drawTop(spr1);
