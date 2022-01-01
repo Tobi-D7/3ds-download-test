@@ -295,25 +295,25 @@ namespace d7gfx {
          * @param t_texture       The texture to bind
          * @param t_resetMaterial Whether or not to reset the material so that it won't interfere with the texture
          */
-        void bindTexture(d7gfx::Texture& t_texture, int id = 0, bool t_resetMaterial = true);
+        void bindTexture(d7gfx::Texture& t_texture, bool t_resetMaterial = true);
 
         /**
          * @brief Unbinds the bound texture (disables texture using)
          * @param t_resetMaterial Whether or not to reset the material to the default material
          */
-        void unbindTexture(int id = 0, bool t_resetMaterial = true);
+        void unbindTexture(bool t_resetMaterial = true);
 
         /**
          * @brief Returns a reference to the current texture
          * @return The current texture (or nullptr if no texture was bound)
          */
-        d7gfx::Texture& getTexture(int id = 0);
+        d7gfx::Texture& getTexture();
 
         /**
          * @brief Returns whether a texture was bound or not
          * @return `true` if a texture was bound, `false` otherwise
          */
-        bool isTextureBound(int id = 0);
+        bool isTextureBound();
 
         /**
          * @brief Draws the mesh
@@ -330,14 +330,14 @@ namespace d7gfx {
     private:
         /* data */
         float m_rotationX, m_rotationY, m_rotationZ, m_posX, m_posY, m_posZ, m_scaleX, m_scaleY, m_scaleZ;
-        bool m_useTexture[3];
+        bool m_useTexture;
 
         // polygons
         std::vector<d7gfx::Mesh::Polygon::Vertex> m_vertices;
         d7gfx::Mesh::Polygon::Vertex* m_vbo;
-        
+
         // display properties
-        d7gfx::Texture m_texture[3];
+        d7gfx::Texture m_texture;
         d7gfx::Material m_material;
     };
 } /* d7gfx */
