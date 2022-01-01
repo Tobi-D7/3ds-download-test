@@ -12,8 +12,8 @@ namespace d7gfx {
         m_posZ(0.0f),
         m_scaleX(1.0f),
         m_scaleY(1.0f),
-        m_scaleZ(1.0f)
-        /*m_useTexture(false[3])*/ { /* do nothing */ }
+        m_scaleZ(1.0f),
+        m_useTexture(false) { /* do nothing */ }
 
     Mesh::~Mesh() {
         linearFree(m_vbo);
@@ -193,9 +193,9 @@ namespace d7gfx {
         return m_material;
     }
 
-    void Mesh::bindTexture(d7gfx::Texture& t_texture, int id, bool t_resetMaterial) {
-        m_useTexture[id] = true;
-        m_texture[id] = t_texture;
+    void Mesh::bindTexture(d7gfx::Texture& t_texture, bool t_resetMaterial) {
+        m_useTexture = true;
+        m_texture = t_texture;
 
         if (t_resetMaterial) {
             m_material.setAmbient(125, 125, 125);
@@ -203,20 +203,20 @@ namespace d7gfx {
         }
     }
 
-    void Mesh::unbindTexture(int id, bool t_resetMaterial) {
-        m_useTexture[id] = false;
+    void Mesh::unbindTexture(bool t_resetMaterial) {
+        m_useTexture = false;
 
         if (t_resetMaterial) {
             m_material = d7gfx::Material();
         }
     }
 
-    d7gfx::Texture& Mesh::getTexture(int id) {
-        return m_texture[id];
+    d7gfx::Texture& Mesh::getTexture() {
+        return m_texture;
     }
 
-    bool Mesh::isTextureBound(int id) {
-        return m_useTexture[id];
+    bool Mesh::isTextureBound() {
+        return m_useTexture;
     }
 
     void Mesh::draw(d7gfx::RenderContext t_context) {
@@ -231,7 +231,18 @@ namespace d7gfx {
 
             // set material
             C3D_LightEnvMaterial(&t_context.getLightEnvironment(), m_material.getMaterial());
-            
+
+            if (m_useTexture) {
+                // enable textures
+                t_context.enableTextures(true);
+
+                // bind the texture
+                C3D_TexSetFilter(m_texture.getTexture(), GPU_LINEAR, GPU_LINEAR);
+                C3D_TexBind(0, m_texture.getTexture());
+            } else {
+                // disable textures
+                t_context.enableTextures(false);
+            }
 
             // create buffer
             C3D_BufInfo* bufInfo = C3D_GetBufInfo();
