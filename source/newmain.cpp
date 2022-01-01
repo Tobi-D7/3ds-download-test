@@ -13,6 +13,7 @@ int main()
         d7gfx::Texture modltex;
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
+    d7gfx::Plane pln(400, 400);
     d7gfx::Color c1(25, 100, 244);
     if (RenderD7::FS::FileExist("sdmc:/mdl.obj")) _mdl = true;
     if (_mdl)
@@ -109,6 +110,7 @@ int main()
      //   renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
        // spr1.setScale(0.1,0.1);
         renderer.drawTop(cube, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(pln, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
