@@ -5,7 +5,7 @@ bool _dcl = true;
 int main()
 {
     d7gfx::InitApp();  
-    consoleInit(GFX_BOTTOM, NULL);
+    //consoleInit(GFX_BOTTOM, NULL);
     d7gfx::Color sky(122, 145, 255); 
     d7gfx::Renderer renderer(true);
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
@@ -100,7 +100,7 @@ int main()
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
-        renderer.drawTop(rec);
+        renderer.drawBottom(rec);
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
