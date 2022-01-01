@@ -231,22 +231,7 @@ namespace d7gfx {
 
             // set material
             C3D_LightEnvMaterial(&t_context.getLightEnvironment(), m_material.getMaterial());
-            for (int id = 0; id < 2; id++)
-            {               
-                if (m_useTexture[id]) {
-                // enable textures
-                t_context.enableTextures(true);
-
-                // bind the texture
-                
-                    C3D_TexSetFilter(m_texture[id].getTexture(), GPU_LINEAR, GPU_LINEAR);
-                    C3D_TexBind(0, m_texture[id].getTexture()); 
-                }
-                 else {
-                    // disable textures
-                  //  t_context.enableTextures(false);
-                }
-            } 
+            
 
             // create buffer
             C3D_BufInfo* bufInfo = C3D_GetBufInfo();
