@@ -6,7 +6,7 @@ bool _mdl = false;
 int main()
 {
     d7gfx::InitApp();  
-    //consoleInit(GFX_BOTTOM, NULL);
+    consoleInit(GFX_BOTTOM, NULL);
     d7gfx::Color sky(122, 145, 255); 
     d7gfx::Renderer renderer(true);
     d7gfx::Model modl;
@@ -112,7 +112,7 @@ int main()
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
-        renderer.drawBottom(rec);
+        //renderer.drawBottom(rec);
         if (_mdl) renderer.drawTop(modl, d7gfx::RenderContext::Mode::Spatial);
   
        // renderer.drawTop(spr1);
