@@ -2,6 +2,7 @@
 #include <renderd7.hpp>
 //1
 bool _dcl = true;
+bool _mdl = false;
 int main()
 {
     d7gfx::InitApp();  
@@ -11,6 +12,16 @@ int main()
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::Color c1(25, 100, 244);
+    if (RenderD7::FS::FileExist("sdmc:/mdl.obj")) _mdl = true;
+    if (_mdl)
+    {
+        d7gfx::Model modl;
+        d7gfx::Texture modltex;
+        modl.loadFromFile("sdmc:/mdl.obj");
+        modltex.loadFromFile("sdmc:/mdl.png");
+        modl.setPosition(20, 0, 20);
+        mdl.bindTexture(modltex);
+    }
    // d7gfx::Model MdL;
    // d7gfx::Model mark7;
     //d7gfx::Model tpt;
@@ -102,6 +113,8 @@ int main()
 
 
         renderer.drawBottom(rec);
+        if (_mdl) renderer.drawTop(modl, d7gfx::RenderContext::Mode::Spatial);
+  
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
