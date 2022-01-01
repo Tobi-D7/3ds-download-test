@@ -19,7 +19,7 @@ int main()
    // mark7.loadFromFile("romfs:/gfx/moon.obj");
    // MdL.setPosition(-2, 0, 0);
    // mark7.setScale(0.2, 0.2, 0.2);
-   // d7gfx::Rect rec(0, 0, 200, 200, c1);
+    d7gfx::Rect rec(0, 0, 200, 200, c1);
    // d7gfx::Texture tex1;
    // tex1.loadFromFile("romfs:/gfx/moon.png");
    // d7gfx::Texture ptex;
@@ -100,7 +100,7 @@ int main()
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
-        //renderer.drawTop(rec);
+        renderer.drawTop(rec);
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
