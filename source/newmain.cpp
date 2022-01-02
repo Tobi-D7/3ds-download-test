@@ -113,7 +113,7 @@ int main()
         renderer.drawTop(pln, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
-        renderer.drawBkttom(pln, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawBottom(pln, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
 
 
