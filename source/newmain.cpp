@@ -102,7 +102,7 @@ int main()
             cam.moveZ(dirZ);
         }
 
-        cube.rotatePitch(1);
+      /*  cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
       //  MdL.rotateYaw(1);
@@ -120,7 +120,7 @@ int main()
 
         //renderer.drawBottom(rec);
         if (_mdl) renderer.drawTop(modl, d7gfx::RenderContext::Mode::Spatial);
-  
+  */
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
