@@ -124,11 +124,11 @@ namespace d7gfx {
 	C3D_TexSetWrap(&sktex, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
         d7gfx::Texture skktex;
         skktex.setTextuere(&sktex);
-        
+        C3D_TexBind(0, &sktex);
 	    C3D_TexEnv* env = C3D_GetTexEnv(0);
 	    C3D_TexEnvInit(env);
-	    C3D_TexEnvSrc(env, C3D_Both, GPU_TEXTURE0, GPU_TEVSRC::GPU_CONSTANT, GPU_TEVSRC::GPU_CONSTANT);
+	    C3D_TexEnvSrc(env, C3D_Both, GPU_TEXTURE0, 0, 0);
 	    C3D_TexEnvFunc(env, C3D_Both, GPU_REPLACE);
-        C3D_TexBind(0, &sktex);
+        
     }
 } /* d7gfx */
