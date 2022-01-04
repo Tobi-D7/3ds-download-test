@@ -19,9 +19,9 @@ int main()
     if (_mdl)
     {
         modl.loadFromFile("sdmc:/mdl.obj");
-        //modltex.loadFromFile("sdmc:/mdl.png");
+        modltex.loadFromFile("sdmc:/mdl.png");
         modl.setPosition(20, 0, 20);
-        //modl.bindTexture(modltex);
+        modl.bindTexture(modltex);
     }
    // d7gfx::Model MdL;
    // d7gfx::Model mark7;
