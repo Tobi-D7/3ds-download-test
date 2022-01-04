@@ -73,38 +73,48 @@ int main()
         if(d7_hHeld & KEY_CSTICK_RIGHT) cam.rotateYaw(1);
         if(d7_hHeld & KEY_CSTICK_LEFT) cam.rotateYaw(-1);
         
-
+        if(d7hHeld & KEY_R) {
+            float dirY = std::sin(cam.getPitcb(true)) * 0.2;
+            cam.moveY(dirY);
+        }
+        if(d7hHeld & KEY_L) {
+            float dirY = -std::sin(cam.getPitcb(true)) * 0.2;
+            cam.moveY(dirY);
+        }
         if(d7_hDown & KEY_START)break;
         if(d7_hDown & KEY_A) _dcl = true;
         if(d7_hDown & KEY_B) _dcl = false;
         if(d7_hHeld & KEY_CPAD_DOWN) {
-            float dirX = std::sin(cam.getYaw(true)) * 0.03;
-            float dirZ = -std::cos(cam.getYaw(true)) * 0.03;
+            float dirX = std::sin(cam.getYaw(true)) * 0.2;
+            float dirZ = -std::cos(cam.getYaw(true)) * 0.2;
             cam.moveX(dirX);
             cam.moveZ(dirZ);
         }
         if(d7_hHeld & KEY_CPAD_UP) {
-            float dirX = -std::sin(cam.getYaw(true)) * 0.03;
-            float dirZ = std::cos(cam.getYaw(true)) * 0.03;
+            float dirX = -std::sin(cam.getYaw(true)) * 0.2;
+            float dirZ = std::cos(cam.getYaw(true)) * 0.2;
             cam.moveX(dirX);
             cam.moveZ(dirZ);
         }
         if(d7_hHeld & KEY_CPAD_RIGHT) {
-            float dirX = -std::cos(cam.getYaw(true)) * 0.03;
-            float dirZ = -std::sin(cam.getYaw(true)) * 0.03;
+            float dirX = -std::cos(cam.getYaw(true)) * 0.2;
+            float dirZ = -std::sin(cam.getYaw(true)) * 0.2;
             cam.moveX(dirX);
             cam.moveZ(dirZ);
         }
         if(d7_hHeld & KEY_CPAD_LEFT) {
-            float dirX = std::cos(cam.getYaw(true)) * 0.03;
-            float dirZ = std::sin(cam.getYaw(true)) * 0.03;
+            float dirX = std::cos(cam.getYaw(true)) * 0.2;
+            float dirZ = std::sin(cam.getYaw(true)) * 0.2;
             cam.moveX(dirX);
             cam.moveZ(dirZ);
         }
 
-      /*  cube.rotatePitch(1);
+        cube.rotatePitch(1);
         cube.rotateYaw(1);
         cube.rotateRoll(1);
+        modl.rotatePitch(1);
+        modl.rotateYaw(1);
+        modl.rotateRoll(1);
       //  MdL.rotateYaw(1);
      //   tpt.rotateYaw(1);
      //   renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
@@ -120,7 +130,7 @@ int main()
 
         //renderer.drawBottom(rec);
         if (_mdl) renderer.drawTop(modl, d7gfx::RenderContext::Mode::Spatial);
-  */
+  
        // renderer.drawTop(spr1);
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
