@@ -74,11 +74,11 @@ int main()
         if(d7_hHeld & KEY_CSTICK_LEFT) cam.rotateYaw(-1);
         
         if(d7_hHeld & KEY_R) {
-            float dirY = std::sin(cam.getPitch(true)) * 0.2;
+            float dirY = std::sin(cam.getYaw(true)) * 0.2;
             cam.moveY(dirY);
         }
         if(d7_hHeld & KEY_L) {
-            float dirY = -std::sin(cam.getPitch(true)) * 0.2;
+            float dirY = -std::sin(cam.getYaw(true)) * 0.2;
             cam.moveY(dirY);
         }
         if(d7_hDown & KEY_START)break;
