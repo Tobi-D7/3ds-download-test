@@ -13,7 +13,7 @@ int main()
         d7gfx::Texture modltex;
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
-    d7gfx::Skybox sk(20, 20, 20);
+    d7gfx::SkyBox sk(20, 20, 20);
     d7gfx::Plane pln(400, 400);
     d7gfx::Color c1(25, 100, 244);
     if (RenderD7::FS::FileExist("sdmc:/mdl.obj")) _mdl = true;
@@ -43,7 +43,7 @@ int main()
    // d7gfx::Sprite spr1;
     //d7gfx::SkyBox skyb(1.0f);
    // tpt.setPosition(5, 0, 0);
-    //skyb.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
+    sk.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
