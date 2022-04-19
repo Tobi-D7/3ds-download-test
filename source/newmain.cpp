@@ -15,6 +15,8 @@ int main()
     d7gfx::Texture modltex;
     d7gfx::Texture sKtt;
     d7gfx::Text dcount;
+    d7gfx::Text fcount;
+    fcount.setPosition(0, 30);
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::SkyBox sk(50);
@@ -38,6 +40,7 @@ int main()
     while (d7gfx::Mainloop())
     {
         dcount.setText(DrC);
+        fcount.setText(RenderD7::GetFramerate());
         hidScanInput();
       /*  printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate().c_str());
         printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
@@ -106,10 +109,11 @@ int main()
         renderer.drawTop(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(pln, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
-        renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
-        renderer.drawBottom(pln, d7gfx::RenderContext::Mode::Spatial);
+       // renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
+       // renderer.drawBottom(pln, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(sk, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(dcount, d7gfx::RenderContext::Mode::Flat);
+        renderer.drawTop(fcount, d7gfx::RenderContext::Mode::Flat);
 
 
 
