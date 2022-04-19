@@ -129,7 +129,7 @@ namespace d7gfx {
 	C3D_TexEnvInit(env);
             
             
-	C3D_TexEnvSrc(env, C3D_Both, GPU_TEXTURE0, 0, 0);
+	C3D_TexEnvSrc(env, C3D_Both, GPU_TEXTURE0);
         C3D_TexEnvFunc(env, C3D_Both, GPU_REPLACE);
             
     }
