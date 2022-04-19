@@ -27,8 +27,8 @@ int main()
     {
         modl.loadFromFile("sdmc:/mdl.obj");
         modltex.loadFromFile("sdmc:/mdl.png");
-        sKtt.loadFromFile("romfs:/gfx/skybox.png");
-        sk.bindTexture(sKtt);
+        //sKtt.loadFromFile("romfs:/gfx/skybox.png");
+        //sk.bindTexture(sKtt);
         modl.setPosition(20, 0, 20);
         modl.bindTexture(modltex);
     }
