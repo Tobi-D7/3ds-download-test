@@ -32,6 +32,9 @@ int main()
         modl.setPosition(20, 0, 20);
         modl.bindTexture(modltex);
     }
+    sKtt.loadFromFile("romfs:/gfx/skybox.png");
+      //  sk.bindTexture(sKtt);
+     sk.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     d7gfx::Rect rec(0, 0, 200, 200, c1);
     d7gfx::Texture ptex;
     ptex.loadFromFile("romfs:/gfx/texture.png");
