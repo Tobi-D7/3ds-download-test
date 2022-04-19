@@ -47,6 +47,7 @@ namespace d7gfx
         bool getUseFog(d7gfx::RenderContext::ScreenTarget t_target);
         void setFogDensity(float t_density,d7gfx::RenderContext::ScreenTarget t_target);
         float getFogDensity(d7gfx::RenderContext::ScreenTarget t_target);
+        inline int GetDrawCalls() { return this->DrawCalls; }
         private:
         /*Data*/
 
@@ -83,6 +84,11 @@ namespace d7gfx
         C3D_FogLut m_fogLutTop, m_fogLutBottom;
         //Skybox
         
+
+        //
+        int Polygons = 0;
+        int DrawCalls = 0;
+
         //Widemode
         bool m_wide = false;
         

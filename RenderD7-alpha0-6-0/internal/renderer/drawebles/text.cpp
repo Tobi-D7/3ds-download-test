@@ -133,6 +133,7 @@ namespace d7gfx {
     }
 
     void Text::draw(d7gfx::RenderContext t_context) {
+        C2D_TextBufClear(this->m_textBuffer);
         C2D_DrawText(
                     &m_textObject,
                     (m_baseline ? C2D_AtBaseline | C2D_WithColor : C2D_WithColor),

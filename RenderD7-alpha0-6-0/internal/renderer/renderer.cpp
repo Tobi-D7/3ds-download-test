@@ -81,6 +81,7 @@ namespace d7gfx
     }
     void Renderer::Render(bool d_clear)
     {
+        DrawCalls = 0;
         C3D_FrameBegin(C3D_FRAME_SYNCDRAW);
         if (d_clear)
         {
@@ -106,6 +107,7 @@ namespace d7gfx
                 for(const auto &entry : m_drawStackBottom3d) { // for every layer
                     for(const auto &drawable : entry.second) { // draw every object
                         if (drawable.second()) {
+                            DrawCalls++;
                             drawable.first->draw(d7gfx::RenderContext(
                                 m_modelUniform, // modelUniform
                                 m_3dEnabled, // 3dEnabled
@@ -142,6 +144,7 @@ namespace d7gfx
                 for (const auto &entry : m_drawStackTop3d) { // for every layer
                     for (const auto &drawable : entry.second) { // draw every object
                         if (drawable.second()) {
+                            DrawCalls++;
                             drawable.first->draw(d7gfx::RenderContext(
                                 m_modelUniform, // modelUniform
                                 m_3dEnabled, // 3dEnabled
@@ -172,6 +175,7 @@ namespace d7gfx
                     for (const auto &entry : m_drawStackTop3d) { // for every layer
                         for (const auto &drawable : entry.second) { // draw every object
                             if (drawable.second()) {
+                                DrawCalls++;
                                 drawable.first->draw(d7gfx::RenderContext(
                                     m_modelUniform, // modelUniform
                                     m_3dEnabled, // 3dEnabled
@@ -203,6 +207,7 @@ namespace d7gfx
                 for(const auto &entry : m_drawStackBottom2d) { // for every layer
                     for(const auto &drawable : entry.second) { // draw every object
                         if (drawable.second()) {
+                            DrawCalls++;
                             drawable.first->draw(d7gfx::RenderContext(
                                 m_modelUniform, // modelUniform
                                 m_3dEnabled, // 3dEnabled
@@ -227,6 +232,7 @@ namespace d7gfx
                 for(const auto &entry : m_drawStackTop2d) { // for every layer
                     for(const auto &drawable : entry.second) { // draw every object
                         if (drawable.second()) {
+                            DrawCalls++;
                             drawable.first->draw(d7gfx::RenderContext(
                                 m_modelUniform, // modelUniform
                                 m_3dEnabled, // 3dEnabled
@@ -248,6 +254,7 @@ namespace d7gfx
                     for(const auto &entry : m_drawStackTop2d) { // for every layer
                         for(const auto &drawable : entry.second) { // draw every object
                             if (drawable.second()) {
+                                DrawCalls++;
                                 drawable.first->draw(d7gfx::RenderContext(
                                     m_modelUniform, // modelUniform
                                     m_3dEnabled, // 3dEnabled

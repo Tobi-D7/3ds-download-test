@@ -3,6 +3,8 @@
 //1
 bool _dcl = true;
 bool _mdl = false;
+
+std::string DrC = "";
 int main()
 {
     d7gfx::InitApp();  
@@ -12,9 +14,10 @@ int main()
     d7gfx::Model modl;
     d7gfx::Texture modltex;
     d7gfx::Texture sKtt;
+    d7gfx::Text dcount;
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
-    d7gfx::SkyBox sk(20);
+    d7gfx::SkyBox sk(50);
     d7gfx::Plane pln(400, 400);
     d7gfx::Color c1(25, 100, 244);
     if (RenderD7::FS::FileExist("sdmc:/mdl.obj")) _mdl = true;
@@ -27,33 +30,14 @@ int main()
         modl.setPosition(20, 0, 20);
         modl.bindTexture(modltex);
     }
-   // d7gfx::Model MdL;
-   // d7gfx::Model mark7;
-    //d7gfx::Model tpt;
-   // tpt.loadFromFile("romfs:/gfx/playcoin.obj");
-   // MdL.loadFromFile("romfs:/gfx/playcoin.obj");
-   // mark7.loadFromFile("romfs:/gfx/moon.obj");
-   // MdL.setPosition(-2, 0, 0);
-   // mark7.setScale(0.2, 0.2, 0.2);
     d7gfx::Rect rec(0, 0, 200, 200, c1);
-   // d7gfx::Texture tex1;
-   // tex1.loadFromFile("romfs:/gfx/moon.png");
     d7gfx::Texture ptex;
     ptex.loadFromFile("romfs:/gfx/texture.png");
-   // mark7.bindTexture(tex1);
-   // mark7.bindTexture(tex1, 1);
-   // MdL.bindTexture(ptex);
-   // d7gfx::Sprite spr1;
-    //d7gfx::SkyBox skyb(1.0f);
-   // tpt.setPosition(5, 0, 0);
-    //sk.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
-    //spr1.setTexture(tex1);
-    //consoleInit(GFX_BOTTOM, NULL);
-    //printf("success!");
-  //  mark7.setPosition(10, 0, 0);
+
     cube.bindTexture(ptex);
     while (d7gfx::Mainloop())
     {
+        dcount.setText(DrC);
         hidScanInput();
       /*  printf("\x1b[5;1HFramerate: %s\x1b[K", RenderD7::GetFramerate().c_str());
         printf("\x1b[6;1HCPU:     %6.2f%%\x1b[K", C3D_GetProcessingTime()*6.0f);
@@ -119,16 +103,13 @@ int main()
         modl.rotatePitch(1);
         modl.rotateYaw(1);
         modl.rotateRoll(1);
-      //  MdL.rotateYaw(1);
-     //   tpt.rotateYaw(1);
-     //   renderer.drawTop(MdL, d7gfx::RenderContext::Mode::Spatial);
-       // spr1.setScale(0.1,0.1);
         renderer.drawTop(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(pln, d7gfx::RenderContext::Mode::Spatial);
        // renderer.drawTop(mark7, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(pln, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(sk, d7gfx::RenderContext::Mode::Spatial);
+        renderer.drawTop(dcount, d7gfx::RenderContext::Mode::Flat)
 
 
 
@@ -139,6 +120,7 @@ int main()
         //renderer.drawBottom(skyb, d7gfx::RenderContext::Mode::Spatial);
         //renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.Render(_dcl);
+        DrC = std::to_string(renderer.GetDrawCalls());
         renderer.setClearColor(sky);
     }
     d7gfx::ExitApp();
