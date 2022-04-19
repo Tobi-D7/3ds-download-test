@@ -121,12 +121,12 @@ namespace d7gfx {
     {
         if(!genskybox(&sktex, &sk_cube, sheet)) svcBreak(USERBREAK_PANIC);
         C3D_TexSetFilter(&sktex, GPU_LINEAR, GPU_LINEAR);
-	C3D_TexSetWrap(&sktex, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
+	    C3D_TexSetWrap(&sktex, GPU_CLAMP_TO_EDGE, GPU_CLAMP_TO_EDGE);
         d7gfx::Texture skktex;
         skktex.setTextuere(&sktex);
         C3D_TexBind(0, &sktex);
-	C3D_TexEnv* env = C3D_GetTexEnv(0);
-	C3D_TexEnvInit(env);
+	    C3D_TexEnv* env = C3D_GetTexEnv(0);
+	    C3D_TexEnvInit(env);
             
             
 	C3D_TexEnvSrc(env, C3D_Both, GPU_TEXTURE0);

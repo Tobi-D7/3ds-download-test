@@ -11,6 +11,7 @@ int main()
     d7gfx::Renderer renderer(true);
     d7gfx::Model modl;
     d7gfx::Texture modltex;
+    d7gfx::Texture sKtt;
     d7gfx::Camera &cam = renderer.getCamera(d7gfx::RenderContext::ScreenTarget::Top);
     d7gfx::Cube cube(1, 1, 1);
     d7gfx::SkyBox sk(20);
@@ -21,6 +22,8 @@ int main()
     {
         modl.loadFromFile("sdmc:/mdl.obj");
         modltex.loadFromFile("sdmc:/mdl.png");
+        sKtt.loadFromFile("romfs:/gfx/skybox.png");
+        sk.bindTexture(sKtt);
         modl.setPosition(20, 0, 20);
         modl.bindTexture(modltex);
     }
@@ -43,7 +46,7 @@ int main()
    // d7gfx::Sprite spr1;
     //d7gfx::SkyBox skyb(1.0f);
    // tpt.setPosition(5, 0, 0);
-    sk.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
+    //sk.SetSkyBoxTex("romfs:/gfx/skybox.t3x");
     //spr1.setTexture(tex1);
     //consoleInit(GFX_BOTTOM, NULL);
     //printf("success!");
