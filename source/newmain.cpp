@@ -109,7 +109,7 @@ int main()
         renderer.drawBottom(cube, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawBottom(pln, d7gfx::RenderContext::Mode::Spatial);
         renderer.drawTop(sk, d7gfx::RenderContext::Mode::Spatial);
-        renderer.drawTop(dcount, d7gfx::RenderContext::Mode::Flat)
+        renderer.drawTop(dcount, d7gfx::RenderContext::Mode::Flat);
 
 
 
