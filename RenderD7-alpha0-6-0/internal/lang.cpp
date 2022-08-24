@@ -73,7 +73,7 @@ std::string RenderD7::Lang::get(const std::string &key) {
 }
 
 void RenderD7::Lang::load(const std::string &lang) {
-	*/FILE *values;
+	/*FILE *values;
 
 	if (access(("romfs:/lang/" + lang + "/app.json").c_str(), F_OK) == 0) {
 		values = fopen(("romfs:/lang/" + lang + "/app.json").c_str(), "rt");
