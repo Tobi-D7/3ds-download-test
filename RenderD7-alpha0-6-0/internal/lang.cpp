@@ -3,12 +3,12 @@
 #include <unistd.h>
 #include <stdlib.h>
 #include <3ds.h>
-static nlohmann::json appJson;
+//static nlohmann::json appJson;
 
 std::string RenderD7::Lang::getSys()
 {
    
-	u8 language = 1;
+	/*u8 language = 1;
 	CFGU_GetSystemLanguage(&language);
 
 	switch(language) {
@@ -63,17 +63,17 @@ std::string RenderD7::Lang::getSys()
 		default:
 			return "en"; // Fall back to English if missing
 			break;
-	}
+	}*/
 
 }
 std::string RenderD7::Lang::get(const std::string &key) {
-	if (!appJson.contains(key)) return key;
+	/*if (!appJson.contains(key)) return key;
 
-	return appJson.at(key).get_ref<const std::string&>();
+	return appJson.at(key).get_ref<const std::string&>();*/
 }
 
 void RenderD7::Lang::load(const std::string &lang) {
-	FILE *values;
+	*/FILE *values;
 
 	if (access(("romfs:/lang/" + lang + "/app.json").c_str(), F_OK) == 0) {
 		values = fopen(("romfs:/lang/" + lang + "/app.json").c_str(), "rt");
@@ -94,5 +94,5 @@ void RenderD7::Lang::load(const std::string &lang) {
 		if (appJson.is_discarded())
 			appJson = { };
 		return;
-	}
+	}*/
 }
